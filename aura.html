@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- font awesome icon cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- .font awesome icon cdn -->
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!-- .Google Fonts -->
+
+</head>
+
+<style>
+    * {
+        transition: .2s linear;
+        scroll-behavior: smooth;
+    }
+
+    swiper-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #444;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+</style>
+
+<body style="font-family: 'DM Sans', sans-serif;overflow-x: hidden;">
+
+    <!-- Head and Home Section -->
+    <section class="Hero-sec">
+        <div class="bg-[#67A9D0] fixed top-0 left-0 right-0 z-50">
+            <header class="lg:flex justify-between items-center py-4 container mx-auto px-4">
+                <div class="icon-sec flex justify-between items-center">
+                    <a href="aura.html">
+                        <img class="h-[45px] w-[184px]" src="img/Frame 141.png" alt="image">
+                    </a>
+                    <div class="menu-bar flex items-center lg:hidden cursor-pointer">
+                        <img class="w-[24px] h-[24px] menu-bar" onclick="toggleNav()" src="img/menu.png" alt="menu">
+                    </div>
+                </div>
+                <nav class="hidden h-[90vh] lg:h-auto lg:block navbar">
+                    <ul
+                        class="relative top-0 lg:top-0 text-center space-y-10 lg:space-y-0 pt-24 lg:pt-0 lg:flex justify-end items-center">
+                        <li
+                            class="text-[#F7F7F7] hover:text-[#024770] text-base font-medium border-b-2 border-transparent hover:border-[#024770] py-1 mx-4 cursor-pointer transition-all delay-150 duration-300 ease-in-out">
+                            <a href="#howitworks">How it works</a>
+                        </li>
+                        <li
+                            class="text-[#F7F7F7] hover:text-[#024770] text-base font-medium border-b-2 border-transparent hover:border-[#024770] py-1 mx-4 cursor-pointer transition-all delay-150 duration-300 ease-in-out">
+                            <a href="#fororganisation">For Organizations</a>
+                        </li>
+                        <li
+                            class="text-[#F7F7F7] hover:text-[#024770] text-base font-medium border-b-2 border-transparent hover:border-[#024770] py-1 mx-4 cursor-pointer transition-all delay-150 duration-300 ease-in-out">
+                            <a href="#pricing">Pricing </a>
+                        </li>
+                        <li
+                            class="text-[#F7F7F7] hover:text-[#024770] text-base font-medium border-b-2 border-transparent hover:border-[#024770] py-1 mx-4 cursor-pointer transition-all delay-150 duration-300 ease-in-out">
+                            <a href="#community">Community</a>
+                        </li>
+                        <button
+                            class="group mx-auto bg-[#FFFFFF] text-[#06527E] px-4 lg:ml-[25px] py-2 rounded-[35px] text-base font-semibold transition-all duration-300 ease-linear flex items-center justify-center w-full lg:w-[219.08px] h-[52px] hover:bg-[#06527E] hover:text-white">
+                            <a class="flex items-center pr-2" href="#">
+                                <i class="fa-brands fa-apple text-[#242424] text-[23px] group-hover:text-white"></i>
+                                <div class="w-px h-4 bg-[#ccc] mx-[7px] group-hover:bg-white"></div>
+                                <i
+                                    class="fa-brands fa-google-play text-[#242424] text-[20px] group-hover:text-white"></i>
+                                <span class="pl-2 group-hover:text-white">Download App</span>
+                            </a>
+                        </button>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="bg-[url('img/AAAA.png')] bg-center bg-no-repeat pt-[15px] -mt-20 w-full"
+            style="will-change: opacity;">
+            <div class="Home-sec mt-32">
+                <div class="text-wrapper text-center flex flex-col items-center pt-32 justify-center">
+                    <div
+                        class="user-loved bg-[#5894B6] rounded-[22.4px] flex items-center justify-center px-4 py-2 mb-3">
+                        <img class="w-[111.81px] h-[23.82px]" src="img/loved-users.png" alt="image">
+                        <p class="text-[#FFFFFF] text-[15px] font-medium px-2">Loved by over 100k users</p>
+                    </div>
+                    <h1 class="text-[65px] font-bold text-[#FFFFFF]">You’re not broken. <br /></h1>
+                    <h1 class="text-[65px] font-bold text-[#FFFFFF] -mt-7">You’re just burnt out.</h1>
+                    <p class="text-base font-normal text-[#F7F7F7]">Aura Conect helps you find calm, clarity, and
+                        connection at your own pace.</p>
+                    <div class="button-sec flex justify-center items-center my-8 space-x-[12px]">
+                        <button
+                            class="group bg-[#FFFFFF] text-[#06527E] px-4 py-2 rounded-[35px] text-base font-medium transition-all duration-300 ease-linear flex items-center justify-center w-[219.08px] h-[52px] hover:bg-[#06527E] hover:text-white">
+                            <a class="flex items-center pr-2" href="#">
+                                <i class="fa-brands fa-apple text-[#242424] text-[23px] group-hover:text-white"></i>
+                                <div class="w-px h-4 bg-[#ccc] mx-[7px] group-hover:bg-white"></div>
+                                <i
+                                    class="fa-brands fa-google-play text-[#242424] text-[20px] group-hover:text-white"></i>
+                                <span class="pl-2 group-hover:text-white">Download App</span>
+                            </a>
+                        </button>
+                        <button
+                            class="bg-transparent border hover:border-none text-[#FFFFFF] px-4 py-2 rounded-[35px] text-base font-medium transition-all duration-300 ease-linear flex items-center justify-center w-[219.08px] h-[52px] hover:bg-[#06527E] hover:text-white">See
+                            how it works <img class="w-[24px] h-[24px] ml-[10px]" src="img/arrow-right.png"
+                                alt="image"></button>
+                    </div>
+                </div>
+                <div class="swiper mySwiper max-w-[1500px] px-2 mx-auto">
+                    <div class="swiper-wrapper img-wrapper flex items-center justify-center">
+                        <div class="swiper-slide end-16">
+                            <div
+                                class="relative w-[249.186px] h-[496.093px] mx-auto rounded-[30px] cursor-pointer overflow-hidden">
+                                <img src="img/Home1.png" class="absolute w-full h-full object-cover rounded-2xl"
+                                    style="object-position: center;">
+                                <img src="img/Home11.png"
+                                    class="absolute w-full h-full object-cover rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"
+                                    style="object-position: center;">
+                            </div>
+                        </div>
+                        <div class="swiper-slide end-16">
+                            <div
+                                class="relative :w-[249.186px] h-[496.093px] mx-auto rounded-[30px] cursor-pointer overflow-hidden">
+                                <img src="img/Home2.png" class="absolute w-full h-full object-cover rounded-2xl"
+                                    style="object-position: center;">
+                                <img src="img/Home22.png"
+                                    class="absolute w-full h-full object-cover rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"
+                                    style="object-position: center;">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div
+                                class="relative w-[389px] h-[575px] -ml-[56px] mx-auto rounded-[30px] cursor-pointer overflow-hidden">
+                                <video class="w-full h-full rounded-[35px] object-cover mx-auto" src="img/home-vid.mp4"
+                                    autoplay loop></video>
+                            </div>
+                        </div>
+                        <div class="swiper-slide start-16">
+                            <div
+                                class="relative w-[249.186px] h-[496.093px] mx-auto rounded-[30px] cursor-pointer overflow-hidden">
+                                <img src="img/Home3.png" class="absolute w-full h-full object-cover rounded-2xl"
+                                    style="object-position: center;">
+                                <img src="img/Home33.png"
+                                    class="absolute w-full h-full object-cover rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"
+                                    style="object-position: center;">
+                            </div>
+                        </div>
+                        <div class="swiper-slide start-16">
+                            <div
+                                class="relative w-[249.186px] h-[496.093px] mx-auto rounded-[30px] cursor-pointer overflow-hidden">
+                                <img src="img/Home4.png" class="absolute w-full h-full object-cover rounded-2xl"
+                                    style="object-position: center;">
+                                <img src="img/Home44.png"
+                                    class="absolute w-full h-full object-cover rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-300"
+                                    style="object-position: center;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- .Head and Home Section -->
+
+    <!-- Features Section -->
+    <section class="Features-sec">
+        <div class="container mx-auto px-4 py-16">
+            <div class="text-sec flex flex-col items-center justify-center">
+                <p
+                    class="text-[#242424] text-center text-[16px] font-medium bg-[#CBEAFD] rounded-[30px] py-[6px] px-[16px] w-fit mt-[51px] mb-[25px]">
+                    KEY FEATURES</p>
+                <h1 class="text-[#242424] text-center text-[30px] sm:text-[50px] font-semibold">Why Aura Conect Works
+                </h1>
+                <p
+                    class="text-[#4D6E8E] text-center text-[12px] sm:text-[16px] font-normal w-[477px] sm:leading-[22px] pb-[80px]">
+                    Your mind is unique. Aura Conect uses AI, community support, and timeless tools to help you feel
+                    better, your way.</p>
+            </div>
+            <div class="img-card grid sm:grid-cols-2 lg:flex items-center justify-center gap-[31px]">
+                <div class="card mx-auto w-full mb-[35px] lg:mb-0 sm:w-[296px]">
+                    <img class="sm:w-[296px] w-full h-full m-auto sm:h-[347px] rounded-[30px]" src="img/feature1.png"
+                        alt="image">
+                    <h2
+                        class="text-[#242424] text-[18px] sm:text-[20px] font-semibold sm:leading-[34.679px] pt-[42px] pb-[6px]">
+                        Mindful Moments</h2>
+                    <p class="text-[#4D6E8E] text-[15px] sm:text-[16px] font-medium leading-[26px]">Guided meditations
+                        and mindfulness exercises inspired by time-honored traditions.</p>
+                </div>
+                <div class="card mb-[35px] lg:mb-0 sm:w-[296px]">
+                    <img class="sm:w-[296px] w-full h-full m-auto sm:h-[347px] rounded-[30px]" src="img/feature2.png"
+                        alt="image">
+                    <h2
+                        class="text-[#242424] text-[18px] sm:text-[20px] font-semibold leading-[34.679px] pt-[42px] pb-[6px]">
+                        Aura Intelligence</h2>
+                    <p class="text-[#4D6E8E] text-[15px] sm:text-[16px] font-medium leading-[26px]">AI-powered companion
+                        offering personalized guidance and support.</p>
+                </div>
+                <div class="card mb-[35px] lg:mb-0 sm:w-[296px]">
+                    <img class="sm:w-[296px] w-full h-full m-auto sm:h-[347px] rounded-[30px]" src="img/feature3.png"
+                        alt="image">
+                    <h2
+                        class="text-[#242424] text-[18px] sm:text-[20px] font-semibold leading-[34.679px] pt-[42px] pb-[6px]">
+                        Community & Support</h2>
+                    <p class="text-[#4D6E8E] text-[15px] sm:text-[16px] font-medium leading-[26px]">Connect with a
+                        supportive community, share experiences, and offer peer support.</p>
+                </div>
+                <div class="card mb-[35px] lg:mb-0 sm:w-[296px]">
+                    <img class="sm:w-[296px] w-full h-full m-auto sm:h-[347px] rounded-[30px]" src="img/feature4.png"
+                        alt="image">
+                    <h2
+                        class="text-[#242424] text-[18px] sm:text-[20px] font-semibold leading-[34.679px] pt-[42px] pb-[6px]">
+                        Holistic Approach</h2>
+                    <p class="text-[#4D6E8E] text-[15px] sm:text-[16px] font-medium leading-[26px]">Combines time-tested
+                        practices with modern science for a comprehensive approach to mental wellness.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- .Features Section -->
+
+    <!-- How it works Section -->
+    <section class="How-it-works" id="howitworks">
+        <div class="container mx-auto px-4 py-16">
+            <div class="wrapper space-y-10 lg:space-y-0 lg:flex items-center justify-between">
+                <div class="text-wrapper lg:w-[49%]">
+                    <p
+                        class="text-[#242424] text-[16px] font-medium bg-[#CBEAFD] rounded-[30px] py-[6px] px-[16px] w-fit mt-[51px] mb-[25px]">
+                        HOW IT WORKS</p>
+                    <h1 class="text-[#242424] text-[30px] sm:text-[50px] font-semibold leading-[120%]">Your Path to
+                        Mental Clarity,
+                        Step-by-Step</h1>
+                    <p
+                        class="text-[#4D6E8E] text-[12px] sm:text-[16px] font-normal w-[477px] leading-[22px] pt-[10px] pb-[40px] border-b-[1px] border-[#CBEAFD]">
+                        Aura Conect gives you a personalized way to feel better at your pace, on your terms. Whether
+                        you’re building habits, managing stress, or just checking in, we meet you where you are.</p>
+                    <div class="space-y-[13px] mb-[40px] pt-[40px]">
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#242424] text-[16px] sm:text-[20px] font-normal leading-[34.679px]">Download
+                                Aura Conect</p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#242424] text-[16px] sm:text-[20px] font-normal leading-[34.679px]">Set Your
+                                Wellness Goals</p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#242424] text-[16px] sm:text-[20px] font-normal leading-[34.679px]">Set Your
+                                Wellness Goals</p>
+                        </a>
+                    </div>
+                    <button
+                        class="group bg-[#FFFFFF] border border-[#06527E] text-[#06527E] px-4 py-2 rounded-[35px] text-base font-medium transition-all duration-300 ease-linear flex items-center justify-center w-[219.08px] h-[52px] hover:bg-[#06527E] hover:text-white">
+                        <a class="flex items-center pr-2" href="#">
+                            <i class="fa-brands fa-apple text-[23px] group-hover:text-white"></i>
+                            <div class="w-px h-4 bg-[#ccc] mx-[7px] group-hover:bg-white"></div>
+                            <i class="fa-brands fa-google-play text-[20px] group-hover:text-white"></i>
+                            <span class="pl-2 group-hover:text-white">Download App</span>
+                        </a>
+                    </button>
+                </div>
+                <div class="img-wrapper lg:w-[49%]">
+                    <img src="img/Howitworks.png" alt="iamge">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- .How it works Section -->
+
+    <!-- Custom Plans Section -->
+    <section class="Custom Plans" id="fororganisation">
+        <div class="container mx-auto px-4 py-16">
+            <p
+                class="text-[#242424] text-[16px] font-medium bg-[#CBEAFD] rounded-[30px] py-[6px] px-[16px] w-fit md:mt-[51px] mb-[25px]">
+                CUSTOM PLANS</p>
+            <h1 class="text-[#242424] text-[30px] sm:text-[50px] font-semibold lg:w-[858px] leading-[120%]">Looking for
+                a mental
+                wellness
+                solution for your team or organization?</h1>
+            <p class="text-[#4D6E8E] text-[12px] sm:text-[16px] font-normal leading-[22px] pt-[10px] pb-[40px]">From
+                burnout
+                prevention to mood analytics, our solutions help people feel better and perform better.</p>
+            <div class="card-sec mt-[30px] grid lg:grid-cols-2 xl:grid-cols-3 gap-[30px]">
+                <div
+                    class="card mx-auto w-[397px] py-[40px] px-[30px] bg-[#F8FDFF] border border-[#CDF1FF] rounded-[30px] mb-[35px]">
+                    <p
+                        class="text-[#43BAFC] text-[16px] font-medium bg-[#DDF3FF] rounded-[30px] py-[10px] px-[20px] w-fit mb-[35px]">
+                        Employers</p>
+                    <h1 class="text-[#242424] text-[20px] font-semibold pb-[12px]">Boost performance. Reduce burnout.
+                    </h1>
+                    <p class="text-[#4D6E8E] text-[16px] font-medium">Aura Conect supports healthier workplaces with
+                        AI-driven mood insights, burnout detection, and compliance-ready wellness tools that boost
+                        engagement and reduce absenteeism.</p>
+                </div>
+                <div
+                    class="card mx-auto w-[397px] py-[40px] px-[30px] bg-[#FAF7FF] border border-[#E7D9FF] rounded-[30px] mb-[35px]">
+                    <p
+                        class="text-[#9C66ED] text-[16px] font-medium bg-[#ECDFFF] rounded-[30px] py-[10px] px-[20px] w-fit mb-[35px]">
+                        Mental Health Institutions</p>
+                    <h1 class="text-[#242424] text-[20px] font-semibold pb-[12px]">Built for clinicians. Loved by users
+                    </h1>
+                    <p class="text-[#4D6E8E] text-[16px] font-medium">Aura Conect helps therapists and institutions
+                        streamline care with personalized plans, supervision tools, and progress tracking all on a
+                        secure, HIPAA-compliant platform.</p>
+                </div>
+                <div
+                    class="card mx-auto w-[397px] py-[40px] px-[30px] bg-[#FFFAF6] border border-[#FFCEA7] rounded-[30px] mb-[35px]">
+                    <p
+                        class="text-[#FFA359] text-[16px] font-medium bg-[#FFF1E5] rounded-[30px] py-[10px] px-[20px] w-fit mb-[35px]">
+                        Civil Services</p>
+                    <h1 class="text-[#242424] text-[20px] font-semibold pb-[12px]">Confidential care for high-stress
+                        roles.</h1>
+                    <p class="text-[#4D6E8E] text-[16px] font-medium">Aura Conect supports police, military, and
+                        emergency workers with discreet, secure tools like mood tracking, stress relief features, and
+                        private live rooms for emotional well-being.</p>
+                </div>
+                <div
+                    class="card mx-auto w-[397px] py-[40px] px-[30px] bg-[#F1FFFA] border border-[#ACFFDE] rounded-[30px] mb-[35px]">
+                    <p
+                        class="text-[#25C384] text-[16px] font-medium bg-[#C9FFEA] rounded-[30px] py-[10px] px-[20px] w-fit mb-[35px]">
+                        Schools & Universities</p>
+                    <h1 class="text-[#242424] text-[20px] font-semibold pb-[12px]">Support student wellness.</h1>
+                    <p class="text-[#4D6E8E] text-[16px] font-medium">Aura Conect helps schools support student well
+                        being with mood check-ins, mental health tools, and safe peer communities while providing
+                        insights to guide care.</p>
+                </div>
+                <div
+                    class="card mx-auto w-[397px] py-[40px] px-[30px] bg-[#FFF9F8] border border-[#FFD7D4] rounded-[30px] mb-[35px]">
+                    <p
+                        class="text-[#F96B60] text-[16px] font-medium bg-[#FFE4E2] rounded-[30px] py-[10px] px-[20px] w-fit mb-[35px]">
+                        Insurance Providers</p>
+                    <h1 class="text-[#242424] text-[20px] font-semibold pb-[12px]">Lower claims. Happier policyholders.
+                    </h1>
+                    <p class="text-[#4D6E8E] text-[16px] font-medium">Aura Conect equips insurers with proactive
+                        wellness tools, real-time data, and AI support to reduce claims, boost member satisfaction, and
+                        deliver preventive care..</p>
+                </div>
+                <div class="card mx-auto w-[397px] py-[40px] px-[30px] bg-[#76B3D6] rounded-[30px] mb-[35px]">
+                    <h1 class="text-[#FFFFFF] text-[25px] font-bold pb-[12px]">Not sure which plan fits your
+                        organization best?</h1>
+                    <p class="text-[#F7F7F7] text-[16px] font-medium">We’ll walk you through how Aura Conect can support
+                        your team’s unique needs.</p>
+                    <button onclick="toggleNav()"
+                        class="mt-[50px] Get-demo bg-white text-[#06527E] px-4 py-2 rounded-[35px] text-base font-semibold transition-all duration-300 ease-linear flex items-center justify-center w-[219.08px] h-[52px] hover:bg-[#06527E] hover:text-white">
+                        <a class="flex items-center" href="">
+                            Get a Demo
+                            <i class="fa-solid fa-arrow-right text-[27px] ml-4"></i>
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- .Custom Plans Section -->
+
+    <!-- Form Section -->
+     <section class="Form-sec hidden bg-[#000000] bg-opacity-50 w-full h-full fixed top-0 left-0 right-0 bottom-0 z-50" id="form">
+     <div class="container mx-auto px-4 py-16">
+        <div class="lg:w-[900px] m-auto px-12 py-16 pl-20 pt-4 bg-white rounded-[30px] space-y-[39px]">
+            <div class="flex justify-end"><button onclick="toggleNav()" class="text-[60px] font-light Times-btn">&times;</button></div>
+            <div class="">
+                <h1 class="text-[#242424] md:w-[574px] text-[45px] sm:text-[50px] font-semibold leading-[130%]">Let’s
+                    Show
+                    You How Aura
+                    Works for Your Team
+                </h1>
+                <p
+                    class="text-[#71879C] md:w-[591px] text-[14px] sm:text-[16px] font-medium leading-[137.5%] pt-[25px] pb-[10px]">
+                    We'll walk you through the platform and tailor a solution for your organization's
+                    unique needs.</p>
+            </div>
+            <form class="space-y-[40px]">   
+                <div class="form flex flex-col space-y-[16px]">
+                    <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Full Name</label>
+                    <input type="text" placeholder="Enter your full name"
+                        class="w-[85%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] px-[24px]  py-[18px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500 h-[67px]" />
+                </div>
+                <div class="form flex flex-col space-y-[16px]">
+                    <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Work Email </label>
+                    <input type="email" placeholder="Enter your work email  "
+                        class="w-[85%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] px-[24px]  py-[18px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500 h-[67px]" />
+                </div>
+                <div class="form flex flex-col space-y-[16px]">
+                    <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Company/Organization
+                        Name </label>
+                    <input type="text" placeholder="Enter your company/organization name"
+                        class="w-[85%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] px-[24px]  py-[18px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500 h-[67px]" />
+                </div>
+                <div class="form flex flex-col space-y-[16px]">
+                    <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Company Size</label>
+                    <input type="number" placeholder="Select Size"
+                        class="w-[85%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] px-[24px]  py-[18px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500 h-[67px]" />
+                </div>
+                <div class="form flex flex-col space-y-[16px]">
+                    <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Role / Title  </label>
+                    <input type="text" placeholder="Enter your role"
+                        class="w-[85%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] px-[24px]  py-[18px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500 h-[67px]" />
+                </div>
+                <div class="form flex flex-col space-y-[16px]">
+                    <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Message  </label>
+                    <textarea placeholder="Tell us about your business specific needs and timelines" rows="4"
+                        class="w-[85%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] px-[24px]  py-[18px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+                </div>
+                <button type="submit"
+                    class="w-[85%] rounded-[12px] px-[24px] py-[18px] bg-[#06527E] text-white text-[14px] sm:text-[16px] font-medium transition hover:opacity-85">
+                    Submit <span class="ml-2">→</span>
+                </button>
+            </form>
+        </div>
+
+    </div>
+    </section>
+    <!-- Form Section -->
+
+    <!-- Plans and Pricing Section -->
+    <section class="Plan-Sec" id="pricing">
+        <div class="container mx-auto px-4 py-16">
+            <p
+                class="text-[#242424] text-center text-[16px] font-medium bg-[#CBEAFD] rounded-[30px] py-[6px] px-[16px] w-fit md:mt-[51px] mb-[25px] mx-auto">
+                PLANS & PRICING</p>
+            <h1
+                class="text-[#242424] text-center text-[30px] sm:text-[50px] font-semibold leading-[120%] lg:w-[529px] mx-auto">
+                Affordable
+                Wellness for Every Stage of Life</h1>
+            <p
+                class="text-[#4D6E8E] text-center text-[12px] sm:text-[16px] font-normal leading-[22px] pb-[40px] lg:w-[531px] mx-auto pt-[10px]">
+                Whether you're just starting your wellness journey or supporting a team, Aura Conect has a plan designed
+                to fit your needs and your peace of mind.</p>
+            <div class="card-sec space-y-6 md:space-y-0 md:grid md:grid-cols-2 xl:grid-cols-4 gap-[12px]">
+                <div class="card px-[16px] p-[28px] bg-[#F5F7FA] rounded-[30px]">
+                    <div class="pb-[30px]">
+                        <h1 class="text-[#242424] text-[16px] sm:text-[20px] font-semibold">Freemium</h1>
+                        <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Start with the basics, free to
+                            download.</p>
+                    </div>
+                    <div class="pb-[30px]">
+                        <h1 class="text-[#242424] text-[26px] sm:text-[30px] font-semibold">$0</h1>
+                        <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">3-day trial, then £5 one-time
+                            fee</p>
+                    </div>
+                    <div class="pb-[30px]">
+                        <button
+                            class="text-[14.885px] text-white font-semibold bg-[#76B3D6] transition-all ease-in-out duration-300 py-[7.442px] px-[24.187px] w-full rounded-[30px] hover:opacity-70"><a
+                                href="">Start Now for Free</a></button>
+                    </div>
+                    <div class="space-y-[13px]">
+                        <h1 class="text-[12px] sm:text-[14px] font-medium text-[#242424]">Features</h1>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Mood tracking</p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Guided meditations</p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Progress tracking page</p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Join existing communities
+                            </p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Does not include AI
+                                companion</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="card px-[16px] p-[28px] bg-[#F5F7FA] rounded-[30px]">
+                    <div class="pb-[30px]">
+                        <h1 class="text-[#242424] text-[16px] sm:text-[20px] font-semibold">Basic</h1>
+                        <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Smarter care with AI support
+                        </p>
+                    </div>
+                    <div class="pb-[30px]">
+                        <h1 class="text-[#242424] text-[26px] sm:text-[30px] font-semibold">£5/month</h1>
+                        <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Per user/month, billed annually
+                        </p>
+                    </div>
+                    <div class="pb-[30px]">
+                        <button
+                            class="text-[14.885px] text-white font-semibold bg-[#76B3D6] transition-all ease-in-out duration-300 py-[7.442px] px-[24.187px] w-full rounded-[30px] hover:opacity-70"><a
+                                href="">Start Now</a></button>
+                    </div>
+                    <div class="space-y-[13px]">
+                        <h1 class="text-[12px] sm:text-[14px] font-medium text-[#242424]">Features</h1>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Everything in Freemium</p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Full access to AI companion
+                                chatbot</p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Join and create communities
+                            </p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">No voice activation on AI
+                            </p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Ideal for growing teams</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="card px-[16px] p-[28px] bg-[#76B3D6] rounded-[30px]">
+                    <div class="pb-[30px]">
+                        <h1 class="text-[#FFFFFF] text-[16px] sm:text-[20px] font-semibold">Premium</h1>
+                        <p class="text-[#F7F7F7] text-[12px] sm:text-[14px] font-normal">More Connection, Care, Results.
+                        </p>
+                    </div>
+                    <div class="pb-[30px]">
+                        <h1 class="text-[#FFFFFF] text-[26px] sm:text-[30px] font-semibold">£10/month</h1>
+                        <p class="text-[#F7F7F7] text-[12px] sm:text-[14px] font-normal">Per user/month, billed annually
+                        </p>
+                    </div>
+                    <div class="pb-[30px]">
+                        <button
+                            class="text-[14.885px] text-[#76B3D6] font-semibold bg-[#fff] transition-all ease-in-out duration-300 py-[7.442px] px-[24.187px] w-full rounded-[30px] hover:opacity-70"><a
+                                href="">Start Now</a></button>
+                    </div>
+                    <div class="space-y-[13px]">
+                        <h1 class="text-[12px] sm:text-[14px] font-medium text-[#fff]">Features</h1>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon-sec.png" alt="image">
+                            <p class="text-[#F7F7F7] text-[12px] sm:text-[14px] font-medium">Everything in Basic</p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon-sec.png" alt="image">
+                            <p class="text-[#F7F7F7] text-[12px] sm:text-[14px] font-medium">Personalized coaching</p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon-sec.png" alt="image">
+                            <p class="text-[#F7F7F7] text-[12px] sm:text-[14px] font-medium">Group therapy sessions</p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon-sec.png" alt="image">
+                            <p class="text-[#F7F7F7] text-[12px] sm:text-[14px] font-medium">Deeper community engagement
+                            </p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon-sec.png" alt="image">
+                            <p class="text-[#F7F7F7] text-[12px] sm:text-[14px] font-medium">AI companion support</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="card px-[16px] p-[28px] bg-[#F5F7FA] rounded-[30px]">
+                    <div class="pb-[30px]">
+                        <h1 class="text-[#242424] text-[16px] sm:text-[20px] font-semibold">Enterprise</h1>
+                        <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Tailored wellness for teams at
+                            scale.</p>
+                    </div>
+                    <div class="pb-[30px]">
+                        <h1 class="text-[#242424] text-[26px] sm:text-[30px] font-semibold">Custom Pricing</h1>
+                        <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Contact sales for Pricing </p>
+                    </div>
+                    <div class="pb-[30px]">
+                        <button
+                            class="text-[14.885px] text-white font-semibold bg-[#76B3D6] transition-all ease-in-out duration-300 py-[7.442px] px-[24.187px] w-full rounded-[30px] hover:opacity-70"><a
+                                href="">Talk to Sales</a></button>
+                    </div>
+                    <div class="space-y-[13px]">
+                        <h1 class="text-[12px] sm:text-[14px] font-medium text-[#242424]">Features</h1>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Everything in Premium</p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Dedicated account manager
+                            </p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Priority support</p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Custom rollout plans</p>
+                        </a>
+                        <a class="flex items-center" href="">
+                            <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon.png" alt="image">
+                            <p class="text-[#4D6E8E] text-[12px] sm:text-[14px] font-normal">Admin dashboards</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- .Plans and Pricing Section -->
+
+    <!-- Users Feedback Section -->
+    <section class="UsersFeeddback-sec">
+        <div class="container mx-auto px-4 py-16">
+            <p
+                class="text-[#242424] text-center text-[16px] font-medium bg-[#CBEAFD] rounded-[30px] py-[6px] px-[16px] w-fit mb-[25px] mx-auto">
+                WHAT OUR USERS ARE SAYING</p>
+            <h1 class="text-[#242424] text-center text-[30px] sm:text-[50px] font-semibold leading-[120%]">From
+                Individuals to
+                Organizations.</h1>
+            <h1 class="text-[#242424] text-center text-[30px] sm:text-[50px] font-semibold leading-[120%]">Aura Is
+                Changing Lives
+            </h1>
+            <p
+                class="text-[#4D6E8E] text-center text-[12px] sm:text-[16px] font-normal leading-[22px] pb-[40px] lg:w-[531px] mx-auto pt-[10px]">
+                Whether it’s burnout, stress, or simply needing a check-in, Aura Conect helps real people and teams feel
+                better every day.</p>
+            <div class="feedback grid md:grid-cols-2 lg:grid-cols-3 gap-[20px]">
+                <div class="feedback-card py-[40px] px-[25px] bg-[#F1FAFF] rounded-[30px]">
+                    <p class="text-[#242424] text-[16px] sm:text-[18px] font-normal">Aura doesn’t feel like just another
+                        wellness app. It genuinely walks with me through the mess especially on the days I don’t even
+                        know what I need. That kind of emotional support is rare in a digital product.</p>
+                    <div class="mt-[50px] flex items-center space-x-6">
+                        <img class="w-[61px] h-[61px]" src="img/feedback.png" alt="image">
+                        <div class="flex flex-col">
+                            <h3 class="text-[16px] sm:text-[18px] font-medium text-[#242424]">Damilola Adelaja</h3>
+                            <p class="text-[#4D6E8E] text-[13px] sm:text-[14px] font-normal">Product Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-card py-[40px] px-[25px] bg-[#F1FAFF] rounded-[30px]">
+                    <p class="text-[#242424] text-[16px] sm:text-[18px] font-normal">The community feature made me feel
+                        seen in ways traditional therapy never could. It’s not just a group, it’s become my safe,
+                        nighttime routine to log in, listen, and breathe again.</p>
+                    <div class="mt-[50px] flex items-center space-x-6">
+                        <img class="w-[61px] h-[61px]" src="img/feedback.png" alt="image">
+                        <div class="flex flex-col">
+                            <h3 class="text-[16px] sm:text-[18px] font-medium text-[#242424]">David Goodluck</h3>
+                            <p class="text-[#4D6E8E] text-[13px] sm:text-[14px] font-normal">Medical Student</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-card py-[40px] px-[25px] bg-[#F1FAFF] rounded-[30px]">
+                    <p class="text-[#242424] text-[16px] sm:text-[18px] font-normal">I didn't realize how disconnected I
+                        was from my own emotions until I started using Aura’s mood check-ins. It’s become my morning
+                        anchor, 2 minutes that shift my entire day.</p>
+                    <div class="mt-[50px] flex items-center space-x-6">
+                        <img class="w-[61px] h-[61px]" src="img/feedback.png" alt="image">
+                        <div class="flex flex-col">
+                            <h3 class="text-[16px] sm:text-[18px] font-medium text-[#242424]">Tolu James</h3>
+                            <p class="text-[#4D6E8E] text-[13px] sm:text-[14px] font-normal">Freelance Writer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-card py-[40px] px-[25px] bg-[#F1FAFF] rounded-[30px]">
+                    <p class="text-[#242424] text-[16px] sm:text-[18px] font-normal">Within a month of introducing Aura,
+                        we saw a noticeable drop in stress-related absenteeism across our team. But more than he
+                        numbers, it gave us a real lens into burnout and emotional fatigue.</p>
+                    <div class="mt-[50px] flex items-center space-x-6">
+                        <img class="w-[61px] h-[61px]" src="img/feedback.png" alt="image">
+                        <div class="flex flex-col">
+                            <h3 class="text-[16px] sm:text-[18px] font-medium text-[#242424]">Grace Osei</h3>
+                            <p class="text-[#4D6E8E] text-[13px] sm:text-[14px] font-normal">HR Manager, Fintech Startup
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-card py-[40px] px-[25px] bg-[#F1FAFF] rounded-[30px]">
+                    <p class="text-[#242424] text-[16px] sm:text-[18px] font-normal">We had tried wellness webinars &
+                        productivity talks, but nothing landed like Aura did. Our civil service teams now start their
+                        day with check-ins and the shift in focus, energy has been great.</p>
+                    <div class="mt-[50px] flex items-center space-x-6">
+                        <img class="w-[61px] h-[61px]" src="img/feedback.png" alt="image">
+                        <div class="flex flex-col">
+                            <h3 class="text-[16px] sm:text-[18px] font-medium text-[#242424]">Adetola Bello</h3>
+                            <p class="text-[#4D6E8E] text-[13px] sm:text-[14px] font-normal">Team Lead, Lagos Civil
+                                Commission</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-card py-[40px] px-[25px] bg-[#F1FAFF] rounded-[30px]">
+                    <p class="text-[#242424] text-[16px] sm:text-[18px] font-normal">Aura strikes the balance we’ve been
+                        searching for a tool that feels genuinelyhuman, but is still built on solid compliance
+                        frameworks. From GDPR to real user insights, it gives us peace of mind.</p>
+                    <div class="mt-[50px] flex items-center space-x-6">
+                        <img class="w-[61px] h-[61px]" src="img/feedback.png" alt="image">
+                        <div class="flex flex-col">
+                            <h3 class="text-[16px] sm:text-[18px] font-medium text-[#242424]">Richard Okon</h3>
+                            <p class="text-[#4D6E8E] text-[13px] sm:text-[14px] font-normal">Compliance Lead, HealthTech
+                                Organization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- .Users Feedback Section -->
+
+    <!-- Join Community Section -->
+    <section class="Community-sec bg-[#F5F7FA]" id="community">
+        <div class="container mx-auto px-4 py-16">
+            <div class="wrapper lg:flex items-center gap-6 py-[43px] px-[35px]">
+                <div class="text-wrapper lg:w-[50%]">
+                    <p
+                        class="text-[#242424] text-[16px] font-medium bg-[#CBEAFD] rounded-[30px] py-[6px] px-[16px] w-fit mb-[25px]">
+                        AURA COMMUNITY</p>
+                    <h1 class="text-[#242424] text-[30px] sm:text-[50px] font-semibold leading-[120%]">Real
+                        Conversations.
+                        Real Support. In Real Time.</h1>
+                    <p
+                        class="text-[#4D6E8E] text-[12px] sm:text-[16px] font-normal leading-[22px] pb-[40px] lg:w-[531px] pt-[10px]">
+                        Inside Aura Conect, you’ll find support groups, guided live rooms, and safe spaces where people
+                        connect, share, and grow together.</p>
+                    <button
+                        class="bg-transparent border border-[#06527E] text-[#06527E] px-4 sm:px-[26px] py-[12px] rounded-[35px] text-base font-medium transition-all duration-300 ease-linear hover:bg-[#06527E] hover:text-white">
+                        <a class="flex items-center" href="">
+                            Join the Community on Aura Conect App
+                            <i class="fa-solid fa-arrow-right text-[27px] ml-4"></i>
+                        </a>
+                    </button>
+                </div>
+                <div class="img-wrapper hidden lg:flex lg:w-[50%]">
+                    <img src="img//community.png" alt="image">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- .Join Community Section -->
+
+    <!-- Starts Section -->
+    <section class="Starts-sec bg-[#76B3D6] mb-11">
+        <div class="container mx-auto px-4 py-16 pb-0">
+            <div class="wrapper flex-wrap lg:flex-nowrap flex justify-center items-center lg:justify-between gap-6">
+                <div class="first-wrap lg:w-[50%] text-center lg:text-left">
+                    <h1 class="text-[#FFFFFF] text-[40px] sm:text-[65px] font-bold pb-[10px] leading-[120%]">Your
+                        Wellness Journey
+                        Starts Now</h1>
+                    <p class="text-[#F7F7F7] text-[14px] sm:text-[16px] font-medium pb-[33px] pt-[10px]">Start free. No
+                        pressure.
+                        Just peace, clarity, and care every day.</p>
+                    <button
+                        class="group mx-auto lg:mx-0 bg-[#FFFFFF] text-[#06527E] px-4 py-2 rounded-[35px] text-base font-semibold transition-all duration-300 ease-linear flex items-center justify-center w-[219.08px] h-[52px] hover:bg-[#06527E] hover:text-white">
+                        <a class="flex items-center pr-2" href="#">
+                            <i class="fa-brands fa-apple text-[#242424] text-[23px] group-hover:text-white"></i>
+                            <div class="w-px h-4 bg-[#ccc] mx-[7px] group-hover:bg-white"></div>
+                            <i class="fa-brands fa-google-play text-[#242424] text-[20px] group-hover:text-white"></i>
+                            <span class="pl-2 group-hover:text-white">Download App</span>
+                        </a>
+                    </button>
+                    <a class="flex items-center pt-[24px] justify-center lg:justify-normal" href="">
+                        <img class="w-[20px] h-[20px] mr-[14px]" src="img/done-icon-sec.png" alt="image">
+                        <p class="text-[#F7F7F7] text-[14px] sm:text-[16px] font-semibold">Try it free. Cancel anytime.
+                        </p>
+                    </a>
+                </div>
+                <div class="sec-wrap lg:w-[50%]">
+                    <img src="img/starts.png" alt="image">
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- .Starts Section -->
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container mx-auto px-4 py-[70px] pb-[30px]">
+            <div class="wrapper lg:flex gap-[33px] space-y-14 lg:space-y-0">
+                <div class="connect-sec lg:w-[30%]">
+                    <div class="icon-sec">
+                        <a href="aura.html">
+                            <img class="h-[45px] w-[184px]" src="img/footer-icon.png" alt="imgage">
+                        </a>
+                    </div>
+                    <p class="text-[#4D6E8E] text-[14px] sm:text-[16px] font-medium py-[31px]">
+                        Aura Conect is your daily companion for mental wellness powered by AI, rootedin science, and
+                        built for calm.
+                    </p>
+                    <button
+                        class="group bg-[#76B3D6] px-4 py-2 rounded-[35px] text-base font-semibold transition-all duration-300 ease-linear flex items-center justify-center w-[219.08px] h-[52px] hover:bg-[#06527E] text-white">
+                        <a class="flex items-center pr-2" href="#">
+                            <i class="fa-brands fa-apple text-[23px] text-white"></i>
+                            <div class="w-px h-4 bg-[#ccc] mx-[7px] group-hover:bg-white"></div>
+                            <i class="fa-brands fa-google-play text-[20px] text-white"></i>
+                            <span class="pl-2 text-white">Download App</span>
+                        </a>
+                    </button>
+                </div>
+                <div class="explore-sec grid grid-cols-2 md:grid-cols-4 lg:w-[70%] ml-[25px] gap-6 md:gap-0">
+                    <div class="">
+                        <p class="text-[#242424] text-[18px] sm:text-[20px] font-medium pb-[12px] sm:pb-[43px]">Explore
+                        </p>
+                        <ul
+                            class="text-[#4D6E8E] text-[14px] sm:text-[16px] font-medium space-y-[10px] sm:space-y-[28px]">
+                            <li class="border-b-2 w-fit border-transparent hover:text-[#76B3D6] hover:border-[#76B3D6]">
+                                <a href="#howitworks">How It Works</a>
+                            </li>
+                            <li class="border-b-2 w-fit border-transparent hover:text-[#76B3D6] hover:border-[#76B3D6]">
+                                <a href="#community">Community</a>
+                            </li>
+                            <li class="border-b-2 w-fit border-transparent hover:text-[#76B3D6] hover:border-[#76B3D6]">
+                                <a href="#pricing">Pricing</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="">
+                        <p class="text-[#242424] text-[18px] sm:text-[20px] font-medium pb-[12px] sm:pb-[43px]">Legal
+                        </p>
+                        <ul
+                            class="text-[#4D6E8E] text-[14px] sm:text-[16px] font-medium space-y-[10px] sm:space-y-[28px]">
+                            <li class="border-b-2 w-fit border-transparent hover:text-[#76B3D6] hover:border-[#76B3D6]">
+                                <a href="policy.html">Privacy Policy</a>
+                            </li>
+                            <li class="border-b-2 w-fit border-transparent hover:text-[#76B3D6] hover:border-[#76B3D6]">
+                                <a href="">Terms of Use</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="">
+                        <p class="text-[#242424] text-[18px] sm:text-[20px] font-medium pb-[12px] sm:pb-[43px]">For
+                            Organizations</p>
+                        <ul
+                            class="text-[#4D6E8E] text-[14px] sm:text-[16px] font-medium space-y-[10px] sm:space-y-[28px]">
+                            <li class="border-b-2 w-fit border-transparent hover:text-[#76B3D6] hover:border-[#76B3D6]">
+                                <a href="">B2B Partnerships</a>
+                            </li>
+                            <li class="border-b-2 w-fit border-transparent hover:text-[#76B3D6] hover:border-[#76B3D6]">
+                                <a href="">Request a Demo</a>
+                            </li>
+                            <li class="border-b-2 w-fit border-transparent hover:text-[#76B3D6] hover:border-[#76B3D6]">
+                                <a href="">Talk to Sales</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="">
+                        <p class="text-[#242424] text-[18px] sm:text-[20px] font-medium pb-[12px] sm:pb-[43px]">Contact
+                            Us</p>
+                        <ul
+                            class="text-[#4D6E8E] text-[14px] sm:text-[16px] font-medium space-y-[10px] sm:space-y-[28px]">
+                            <li class="border-b-2 w-fit border-transparent hover:text-[#76B3D6] hover:border-[#76B3D6]">
+                                <a href="">Info@auraconect.com</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright-sec pt-[80px] flex items-center justify-between">
+                <div class="first-sec text-center md:text-left mx-auto md:mx-0">
+                    <p class="text-[#4D6E8E] text-[16px] sm:text-[18px] font-medium ">
+                        © 2025 Aura Conect. All rights reserved.
+                    </p>
+                </div>
+                <div class="second-sec">
+                    <div class="">
+                        <ul
+                            class="text-[#757575] hidden text-[16px] sm:text-[18px] font-medium md:flex items-center space-x-4 lg:space-x-[65px]">
+                            <li class="border-b-2 w-fit border-transparent hover:opacity-85 hover:border-[#757575]"><a
+                                    href="https://www.linkedin.com/in/aura-conect-49518b375?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                                    target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                            <li class="border-b-2 w-fit border-transparent hover:opacity-85 hover:border-[#757575]"><a
+                                    href="https://www.instagram.com/_aura_conect_?igsh=MWFkNmJrdGFlZ3piMQ=="
+                                    target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                            <li class="border-b-2 w-fit border-transparent hover:opacity-85 hover:border-[#757575]"><a
+                                    href="https://x.com/AConnect58725?t=uNo33-XCii2dYbdtj-3BjQ&s=08" target="_blank"
+                                    rel="noopener noreferrer">Twitter</a></li>
+                            <li class="border-b-2 w-fit border-transparent hover:opacity-85 hover:border-[#757575]"><a
+                                    href="https://www.facebook.com/reel/1032107198456416" target="_blank"
+                                    rel="noopener noreferrer">Facebook</a></li>
+                            <li class="border-b-2 w-fit border-transparent hover:opacity-85 hover:border-[#757575]"><a
+                                    href="https://www.tiktok.com/@aura.conect5?_t=ZN-8xxpAzWtLL4&_r=1" target="_blank"
+                                    rel="noopener noreferrer">TikTok</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- .Footer Section -->
+
+    <script>
+
+        // toggle navbar section
+
+        let toggleNavStatus = true;
+
+        let toggleNav = function () {
+            let getNavBar = document.querySelector(".navbar");
+            let getMenuBar = document.querySelector(".menu-bar");
+            let getGetDemo = document.querySelector(".Get-demo");
+            let getFormSsec = document.querySelector(".Form-sec");
+            let getTimesBtn = document.querySelector(".Times-btn");
+
+            if (toggleNavStatus) {
+                getNavBar.classList.remove("hidden");
+                getFormSsec.classList.remove("hidden");
+            } else {
+                getNavBar.classList.add("hidden");
+                // getTimesBtn.classList.add("hidden");
+            }
+
+            toggleNavStatus = !toggleNavStatus;
+        };
+        document.addEventListener("DOMContentLoaded", function () {
+            const swiper = new Swiper('.mySwiper', {
+                slidesPerView: 5,
+                loop: true,
+                // autoplay: {
+                //   delay: 5000, // Auto-slide every 3 seconds (3000ms)
+                //   disableOnInteraction: false, // Continue autoplay after user interaction
+                // },
+                breakpoints: {
+                    0: { slidesPerView: 1 },
+                    640: { slidesPerView: 2 },
+                    1024: { slidesPerView: 5 },
+                },
+            });
+        });
+        // toggle navbar section
+    </script>
+
+    <script src="tailwind.config.js"></script>
+</body>
+
+</html>
