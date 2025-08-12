@@ -34,7 +34,14 @@
     * {
         transition: .2s linear;
         scroll-behavior: smooth;
+        padding: 0;
+        margin: 0;
     }
+    .Hero-sec {
+  width: 100vw !important;
+  margin: 0 !important;
+  max-width: none !important;
+}
 
     swiper-container {
         width: 100%;
@@ -61,7 +68,7 @@
 <body style="font-family: 'DM Sans', sans-serif;overflow-x: hidden;">
 
     <!-- Head and Home Section -->
-    <section class="Hero-sec bg-[url('img/AAAA.png')] mx-auto bg-center bg-no-repeat ">
+    <section class="Hero-sec bg-[url('img/AAAA.png')] bg-center bg-no-repeat">
             <header class="bg-[#67A9D0] pb-[50px]">
                 <div class="container mx-auto lg:flex justify-between items-center py-4 px-4">
                 <div class="icon-sec flex justify-between items-center">
@@ -105,7 +112,7 @@
                 </nav>
         </div>
             </header>
-        <div class="bg-[#67A9D0]">
+        <div class="">
             <div class="Home-sec">
                 <div class="text-wrapper text-center flex flex-col items-center justify-center">
                     <div class="user-loved bg-[#5894B6] rounded-[22.4px] flex items-center justify-center px-4 py-2 mb-3">
@@ -199,7 +206,7 @@
                 <h1 class="text-[#242424] text-center text-[30px] sm:text-[50px] font-semibold">Why Aura Conect Works
                 </h1>
                 <p
-                    class="text-[#4D6E8E] text-center text-[12px] sm:text-[16px] font-normal w-[477px] sm:leading-[22px] pb-[80px]">
+                    class="text-[#4D6E8E] text-center text-[12px] sm:text-[16px] font-light w-[477px] sm:leading-[22px] pb-[80px]">
                     Your mind is unique. Aura Conect uses AI, community support, and timeless tools to help you feel
                     better, your way.</p>
             </div>
@@ -248,16 +255,16 @@
     <!-- How it works Section -->
     <section class="How-it-works bg-[#F3FBFF]" id="howitworks">
         <div class="container mx-auto px-4 py-16">
-            <div class="wrapper space-y-10 lg:space-y-0 lg:flex items-center justify-between">
-                <div class="text-wrapper lg:w-[49%]">
+            <div class="wrapper space-y-10 lg:space-y-0 lg:flex justify-between">
+                <div class="text-wrapper lg:w-[49%] lg:-mt-7">
                     <p
                         class="text-[#242424] text-[16px] font-medium bg-[#CBEAFD] rounded-[30px] py-[6px] px-[16px] w-fit mt-[51px] mb-[25px]">
                         HOW IT WORKS</p>
                     <h1 class="text-[#242424] text-[30px] sm:text-[50px] font-semibold leading-[120%]">Your Path to
-                        Mental Clarity,
+                        Mental <br/> Clarity,
                         Step-by-Step</h1>
                     <p
-                        class="text-[#4D6E8E] text-[12px] sm:text-[16px] font-normal w-[477px] leading-[22px] pt-[10px] pb-[40px] border-b-[1px] border-[#CBEAFD]">
+                        class="text-[#4D6E8E] text-[12px] sm:text-[16px] font-light w-[477px] leading-[22px] pt-[10px] pb-[40px] border-b-[1px] border-[#CBEAFD]">
                         Aura Conect gives you a personalized way to feel better at your pace, on your terms. Whether
                         you’re building habits, managing stress, or just checking in, we meet you where you are.</p>
                     <div class="space-y-[13px] mb-[40px] pt-[40px]">
@@ -288,7 +295,7 @@
                     </button>
                 </div>
                 <div class="img-wrapper lg:w-[49%]">
-                    <img src="img/Howitworks.png" alt="iamge">
+                    <img class="lg:w-[615px] lg:h-[602px]" src="img/Howitworks.png" alt="iamge">
                 </div>
             </div>
         </div>
@@ -305,13 +312,13 @@
                 a mental
                 wellness
                 solution for your team or organization?</h1>
-            <p class="text-[#4D6E8E] text-[12px] sm:text-[16px] font-normal leading-[22px] pt-[10px] pb-[40px]">From
+            <p class="text-[#4D6E8E] text-[12px] sm:text-[16px] font-light leading-[22px] pt-[10px] pb-[40px]">From
                 burnout
                 prevention to mood analytics, our solutions help people feel better and perform better.</p>
-            <div class="card-sec mt-[20px] grid lg:grid-cols-2 xl:grid-cols-3">
-                <div class="card mx-auto w-auto sm:w-[405px] px-[15px] p-[25px] bg-[#F8FDFF] border border-[#CDF1FF] rounded-[30px] mb-[25px]">
+            <div class="card-sec mt-[20px] grid lg:grid-cols-2 xl:grid-cols-3 mx-5 lg:mx-0 gap-[20px]">
+                <div class="card mx-auto px-[22px] py-[40px] bg-[#F8FDFF] border border-[#CDF1FF] rounded-[30px] mb-[16px]">
                     <p
-                        class="text-[#43BAFC] text-[16px] font-medium bg-[#DDF3FF] rounded-[30px] py-[10px] px-[20px] w-fit mb-[35px]">
+                        class="text-[#43BAFC] text-[16px] font-medium bg-[#DDF3FF] rounded-[30px] py-[10px] px-[20px] w-fit mb-[40px]">
                         Employers</p>
                     <h1 class="text-[#242424] text-[20px] font-semibold pb-[12px]">Boost performance. Reduce burnout.
                     </h1>
@@ -319,51 +326,51 @@
                         AI-driven mood insights, burnout detection, and compliance-ready wellness tools that boost
                         engagement and reduce absenteeism.</p>
                 </div>
-                <div class="card mx-auto w-auto sm:w-[405px] px-[15px] p-[25px] bg-[#FAF7FF] border border-[#E7D9FF] rounded-[30px] mb-[25px]">
+                <div class="card mx-auto px-[22px] py-[40px] bg-[#FAF7FF] border border-[#E7D9FF] rounded-[30px] mb-[16px]">
                     <p
                         class="text-[#9C66ED] text-[16px] font-medium bg-[#ECDFFF] rounded-[30px] py-[10px] px-[20px] w-fit mb-[35px]">
                         Mental Health Institutions</p>
-                    <h1 class="text-[#242424] text-[20px] font-semibold pb-[12px]">Built for clinicians. Loved by users
+                    <h1 class="text-[#242424] text-[20px] font-medium pb-[12px]">Built for clinicians. Loved by users
                     </h1>
-                    <p class="text-[#4D6E8E] text-[16px] font-medium">Aura Conect helps therapists and institutions
+                    <p class="text-[#4D6E8E] text-[16px] font-normal">Aura Conect helps therapists and institutions
                         streamline care with personalized plans, supervision tools, and progress tracking all on a
                         secure, HIPAA-compliant platform.</p>
                 </div>
-                <div class="card mx-auto w-auto sm:w-[405px] px-[15px] p-[22px] bg-[#FFFAF6] border border-[#FFCEA7] rounded-[30px] mb-[25px]">
+                <div class="card mx-auto px-[22px] py-[40px] bg-[#FFFAF6] border border-[#FFCEA7] rounded-[30px] mb-[16px]">
                     <p
                         class="text-[#FFA359] text-[16px] font-medium bg-[#FFF1E5] rounded-[30px] py-[10px] px-[20px] w-fit mb-[35px]">
                         Civil Services</p>
-                    <h1 class="text-[#242424] text-[20px] font-semibold pb-[12px]">Confidential care for high-stress
+                    <h1 class="text-[#242424] text-[20px] font-medium pb-[12px]">Confidential care for high-stress
                         roles.</h1>
-                    <p class="text-[#4D6E8E] text-[16px] font-medium">Aura Conect supports police, military, and
+                    <p class="text-[#4D6E8E] text-[16px] font-normal">Aura Conect supports police, military, and
                         emergency workers with discreet, secure tools like mood tracking, stress relief features, and
                         private live rooms for emotional well-being.</p>
                 </div>
-                <div class="card mx-auto w-auto sm:w-[405px] px-[15px] p-[25px] bg-[#F1FFFA] border border-[#ACFFDE] rounded-[30px] mb-[25px]">
+                <div class="card mx-auto px-[22px] py-[40px] bg-[#F1FFFA] border border-[#ACFFDE] rounded-[30px] mb-[16px]">
                     <p
                         class="text-[#25C384] text-[16px] font-medium bg-[#C9FFEA] rounded-[30px] py-[10px] px-[20px] w-fit mb-[35px]">
                         Schools & Universities</p>
-                    <h1 class="text-[#242424] text-[20px] font-semibold pb-[12px]">Support student wellness.</h1>
-                    <p class="text-[#4D6E8E] text-[16px] font-medium">Aura Conect helps schools support student well
+                    <h1 class="text-[#242424] text-[20px] font-medium pb-[12px]">Support student wellness.</h1>
+                    <p class="text-[#4D6E8E] text-[16px] font-normal">Aura Conect helps schools support student well
                         being with mood check-ins, mental health tools, and safe peer communities while providing
                         insights to guide care.</p>
                 </div>
-                <div class="card mx-auto w-auto sm:w-[405px] px-[15px] p-[25px] bg-[#FFF9F8] border border-[#FFD7D4] rounded-[30px] mb-[25px]">
+                <div class="card mx-auto px-[22px] py-[40px] bg-[#FFF9F8] border border-[#FFD7D4] rounded-[30px] mb-[16px]">
                     <p
                         class="text-[#F96B60] text-[16px] font-medium bg-[#FFE4E2] rounded-[30px] py-[10px] px-[20px] w-fit mb-[35px]">
                         Insurance Providers</p>
-                    <h1 class="text-[#242424] text-[20px] font-semibold pb-[12px]">Lower claims. Happier policyholders.
+                    <h1 class="text-[#242424] text-[20px] font-medium pb-[12px]">Lower claims. Happier policyholders.
                     </h1>
-                    <p class="text-[#4D6E8E] text-[16px] font-medium">Aura Conect equips insurers with proactive
+                    <p class="text-[#4D6E8E] text-[16px] font-normal">Aura Conect equips insurers with proactive
                         wellness tools, real-time data, and AI support to reduce claims, boost member satisfaction, and
                         deliver preventive care..</p>
                 </div>
-                <div class="card mx-auto w-auto sm:w-[405px] px-[15px] p-[25px] bg-[#76B3D6] rounded-[30px] mb-[25px]">
-                    <h1 class="text-[#FFFFFF] text-[25px] font-bold pb-[12px]">Not sure which plan fits your
+                <div class="card mx-auto px-[22px] py-[40px] bg-[#76B3D6] rounded-[30px] mb-[16px]">
+                    <h1 class="text-[#FFFFFF] text-[25px] font-semibold pb-[12px]">Not sure which plan fits your
                         organization best?</h1>
-                    <p class="text-[#F7F7F7] text-[16px] font-medium">We’ll walk you through how Aura Conect can support
+                    <p class="text-[#F7F7F7] text-[16px] font-normal">We’ll walk you through how Aura Conect can support
                         your team’s unique needs.</p>
-                    <button  class="mt-[30px] Get-demo bg-white text-[#06527E] px-4 py-2 rounded-[35px] text-base font-semibold transition-all duration-300 ease-linear flex items-center justify-center w-[219.08px] h-[52px] hover:bg-[#06527E] hover:text-white">
+                    <button  class="mt-[50px] Get-demo bg-white text-[#06527E] px-4 py-2 rounded-[35px] text-base font-semibold transition-all duration-300 ease-linear flex items-center justify-center w-[219.08px] h-[52px] hover:bg-[#06527E] hover:text-white">
                         <span class="flex items-center" onclick="FormStatusInfo()">
                             Get a Demo
                             <i class="fa-solid fa-arrow-right text-[27px] ml-4"></i>
@@ -387,38 +394,38 @@
                     Works for Your Team
                 </h1>
                 <p
-                    class="text-[#71879C] md:w-[591px] text-[14px] sm:text-[16px] font-medium leading-[137.5%] pt-[25px] pb-[10px]">
+                    class="text-[#71879C] md:w-[591px] text-[14px] sm:text-[16px] font-light leading-[137.5%] pt-[10px]">
                     We'll walk you through the platform and tailor a solution for your organization's
                     unique needs.</p>
             </div>
-            <form class="space-y-[10px]">   
-                <div class="form flex flex-col space-y-[6px]">
+            <form class="space-y-[39px] pt-[46px]">   
+                <div class="form flex flex-col space-y-[16px]">
                     <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Full Name</label>
                     <input type="text" placeholder="Enter your full name"
                         class="w-[85%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] px-[24px]  py-[18px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500 h-[67px]" />
                 </div>
-                <div class="form flex flex-col space-y-[6px]">
+                <div class="form flex flex-col space-y-[16px]">
                     <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Work Email </label>
                     <input type="email" placeholder="Enter your work email  "
                         class="w-[85%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] px-[24px]  py-[18px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500 h-[67px]" />
                 </div>
-                <div class="form flex flex-col space-y-[6px]">
+                <div class="form flex flex-col space-y-[16px]">
                     <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Company/Organization
                         Name </label>
                     <input type="text" placeholder="Enter your company/organization name"
                         class="w-[85%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] px-[24px]  py-[18px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500 h-[67px]" />
                 </div>
-                <div class="form flex flex-col space-y-[6px]">
+                <div class="form flex flex-col space-y-[16px]">
                     <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Company Size</label>
                     <input type="number" placeholder="Select Size"
                         class="w-[85%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] px-[24px]  py-[18px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500 h-[67px]" />
                 </div>
-                <div class="form flex flex-col space-y-[6px]">
+                <div class="form flex flex-col space-y-[16px]">
                     <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Role / Title  </label>
                     <input type="text" placeholder="Enter your role"
                         class="w-[85%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] px-[24px]  py-[18px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500 h-[67px]" />
                 </div>
-                <div class="form flex flex-col space-y-[6px]">
+                <div class="form flex flex-col space-y-[16px]">
                     <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Message  </label>
                     <textarea placeholder="Tell us about your business specific needs and timelines" rows="4"
                         class="w-[85%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] px-[24px]  py-[18px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
@@ -445,7 +452,7 @@
                 Affordable
                 Wellness for Every Stage of Life</h1>
             <p
-                class="text-[#4D6E8E] text-center text-[12px] sm:text-[16px] font-normal leading-[22px] pb-[40px] lg:w-[559px] mx-auto pt-[10px]">
+                class="text-[#4D6E8E] text-center text-[12px] sm:text-[16px] font-light leading-[22px] pb-[40px] lg:w-[559px] mx-auto pt-[10px]">
                 Whether you're just starting your wellness journey or supporting a team, Aura Conect has a plan designed
                 to fit your needs and your peace of mind.</p>
             <div class="card-sec space-y-6 md:space-y-0 md:grid md:grid-cols-2 xl:grid-cols-4 gap-[12px]">
@@ -633,11 +640,11 @@
                 Changing Lives
             </h1>
             <p
-                class="text-[#4D6E8E] text-center text-[12px] sm:text-[16px] font-normal leading-[22px] pb-[40px] lg:w-[531px] mx-auto pt-[10px]">
+                class="text-[#4D6E8E] text-center text-[12px] sm:text-[16px] font-light leading-[22px] pb-[40px] lg:w-[531px] mx-auto pt-[10px]">
                 Whether it’s burnout, stress, or simply needing a check-in, Aura Conect helps real people and teams feel
                 better every day.</p>
-            <div class="feedback grid md:grid-cols-2 lg:grid-cols-3 gap-[20px]">
-                <div class="feedback-card py-[40px] px-[25px] bg-[#F1FAFF] rounded-[30px]">
+            <div class="feedback grid md:grid-cols-2 lg:grid-cols-3 gap-[16px]">
+                <div class="feedback-card py-[30px] px-[20px] bg-[#F1FAFF] rounded-[30px] mb-[18px]">
                     <p class="text-[#242424] text-[16px] sm:text-[18px] font-normal">Aura doesn’t feel like just another
                         wellness app. It genuinely walks with me through the mess especially on the days I don’t even
                         know what I need. That kind of emotional support is rare in a digital product.</p>
@@ -649,7 +656,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="feedback-card py-[40px] px-[25px] bg-[#F1FAFF] rounded-[30px]">
+                <div class="feedback-card py-[30px] px-[20px] bg-[#F1FAFF] rounded-[30px] mb-[18px]">
                     <p class="text-[#242424] text-[16px] sm:text-[18px] font-normal">The community feature made me feel
                         seen in ways traditional therapy never could. It’s not just a group, it’s become my safe,
                         nighttime routine to log in, listen, and breathe again.</p>
@@ -661,7 +668,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="feedback-card py-[40px] px-[25px] bg-[#F1FAFF] rounded-[30px]">
+                <div class="feedback-card py-[30px] px-[20px] bg-[#F1FAFF] rounded-[30px] mb-[18px]">
                     <p class="text-[#242424] text-[16px] sm:text-[18px] font-normal">I didn't realize how disconnected I
                         was from my own emotions until I started using Aura’s mood check-ins. It’s become my morning
                         anchor, 2 minutes that shift my entire day.</p>
@@ -673,7 +680,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="feedback-card py-[40px] px-[25px] bg-[#F1FAFF] rounded-[30px]">
+                <div class="feedback-card py-[30px] px-[20px] bg-[#F1FAFF] rounded-[30px] mb-[18px]">
                     <p class="text-[#242424] text-[16px] sm:text-[18px] font-normal">Within a month of introducing Aura,
                         we saw a noticeable drop in stress-related absenteeism across our team. But more than he
                         numbers, it gave us a real lens into burnout and emotional fatigue.</p>
@@ -686,7 +693,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="feedback-card py-[40px] px-[25px] bg-[#F1FAFF] rounded-[30px]">
+                <div class="feedback-card py-[30px] px-[20px] bg-[#F1FAFF] rounded-[30px] mb-[18px]">
                     <p class="text-[#242424] text-[16px] sm:text-[18px] font-normal">We had tried wellness webinars &
                         productivity talks, but nothing landed like Aura did. Our civil service teams now start their
                         day with check-ins and the shift in focus, energy has been great.</p>
@@ -699,7 +706,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="feedback-card py-[40px] px-[25px] bg-[#F1FAFF] rounded-[30px]">
+                <div class="feedback-card py-[30px] px-[20px] bg-[#F1FAFF] rounded-[30px] mb-[18px]">
                     <p class="text-[#242424] text-[16px] sm:text-[18px] font-normal">Aura strikes the balance we’ve been
                         searching for a tool that feels genuinelyhuman, but is still built on solid compliance
                         frameworks. From GDPR to real user insights, it gives us peace of mind.</p>
@@ -729,7 +736,7 @@
                         Conversations.
                         Real Support. In Real Time.</h1>
                     <p
-                        class="text-[#4D6E8E] text-[12px] sm:text-[16px] font-normal leading-[22px] pb-[40px] lg:w-[531px] pt-[10px]">
+                        class="text-[#4D6E8E] text-[12px] sm:text-[16px] font-light leading-[22px] pb-[40px] lg:w-[531px] pt-[10px]">
                         Inside Aura Conect, you’ll find support groups, guided live rooms, and safe spaces where people
                         connect, share, and grow together.</p>
                     <button
@@ -753,10 +760,10 @@
         <div class="container mx-auto px-4 py-16 pb-0">
             <div class="wrapper flex-wrap lg:flex-nowrap flex justify-center items-center lg:justify-between gap-6">
                 <div class="first-wrap lg:w-[50%] text-center lg:text-left">
-                    <h1 class="text-[#FFFFFF] text-[40px] sm:text-[65px] font-bold pb-[10px] leading-[120%]">Your
+                    <h1 class="text-[#FFFFFF] text-[40px] sm:text-[65px] font-bold pb-[10px] leading-[110%]">Your
                         Wellness Journey
-                        Starts Now</h1>
-                    <p class="text-[#F7F7F7] text-[14px] sm:text-[16px] font-medium pb-[33px] pt-[10px]">Start free. No
+                        Starts <br/> Now</h1>
+                    <p class="text-[#F7F7F7] text-[14px] sm:text-[16px] font-normal pb-[33px] pt-[10px]">Start free. No
                         pressure.
                         Just peace, clarity, and care every day.</p>
                     <button
