@@ -398,15 +398,35 @@
                     <textarea placeholder="Tell us about your business specific needs and timelines" rows="6"
                         class="w-[98%] resize-none placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] pl-[24px] px-[10px] py-[5px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                 </div>
-                <button type="submit"
-                    class="w-[98%] rounded-[12px] px-[24px] py-[18px] bg-[#06527E] text-white text-[14px] sm:text-[16px] font-medium transition hover:opacity-85">
+                <button onclick="SucessFormtatusInfo()"
+                    class="w-[98%] getDemoBtn rounded-[12px] px-[24px] py-[18px] bg-[#06527E] text-white text-[14px] sm:text-[16px] font-medium transition hover:opacity-85">
                     Submit <span class="ml-2">→</span>
                 </button>
             </form>
         </div>
     </div>
     </section>
-    <!-- Form Section -->
+    <!-- .Form Section -->
+
+    <!-- SucessForm Section -->
+    <section class="SucessForm-sec hidden bg-[#000000] fixed top-0 left-0 right-0 z-50 bg-opacity-50 w-full h-full" id="">
+     <div class="container mx-auto">
+        <div class="w-[90%] sm:w-[514px] my-6 mx-auto p-6 bg-white rounded-[30px] fixed top-[12%] left-0 right-0 space-y-[3px] text-center">
+            <img class="w-[206px] h-[206px] mx-auto" src="img/verified.webp" alt="image">
+                <h1 class="text-[#242424] text-[35px] sm:text-[50px] font-medium leading-[120%]">Let’s
+                    Successful
+                </h1>
+                <p class="text-[#71879C] mx-auto sm:w-[300px] text-[16px] font-light py-[6px] sm:py-[10px]">
+                    Thanks! Someone from our team will be in touch within 24 hours.
+                </p>
+                <button type="button" 
+                    class="w-[98%] rounded-[12px] px-[24px] py-[18px] bg-[#06527E] text-white text-[14px] sm:text-[16px] font-medium transition hover:opacity-85">
+                   Back to Homepage
+                </button>
+        </div>
+    </div>
+    </section>
+    <!-- .SucessForm Section -->
 
     <!-- Plans and Pricing Section -->
     <section class="Plan-Sec" id="pricing">
@@ -906,7 +926,23 @@
                 getFormSsec.style.display = 'none'
             }
 
-            toggleNavStatus = !toggleNavStatus;
+            FormStatus = !FormStatus;
+        };
+        
+        let SucessFormStatus = true;
+        let SucessFormtatusInfo = function () {
+            let getGetDemoBtn = document.querySelector(".getDemoBtn");
+            let getSucessFormSec = document.querySelector(".SucessForm-sec");
+            let getGetDemo = document.querySelector(".Get-demo");
+            let getFormSsec = document.querySelector(".Form-sec");
+
+            if (toggleNavStatus) {
+                getSucessFormSec.style.display = 'block';
+                getFormSsec.style.display = 'none'
+            } else {
+            }
+
+            SucessFormStatus = !SucessFormStatus;
         }; 
 
         window.onscroll = function () {
