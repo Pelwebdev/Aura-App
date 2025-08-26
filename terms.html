@@ -457,56 +457,56 @@
                         We'll walk you through the platform and tailor a solution for your organization's
                         unique needs.</p>
                 </div>
-                <form class="space-y-[39px] pt-[46px] pb-[16px]">
+                <form id="contact-form" class="space-y-[39px] pt-[46px] pb-[16px]">
                     <div class="form flex flex-col space-y-[16px]">
                         <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Full Name</label>
-                        <input type="text" placeholder="Enter your full name"
+                        <input id="name" type="text" placeholder="Enter your full name"
                             class="w-[98%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] h-[58px] pl-[24px] px-[10px] py-[5px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500 " />
                     </div>
                     <div class="form flex flex-col space-y-[16px]">
                         <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Work Email </label>
-                        <input type="email" placeholder="Enter your work email  "
+                        <input id="email" type="email" placeholder="Enter your work email  "
                             class="w-[98%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] h-[58px] pl-[24px] px-[10px] py-[5px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div class="form flex flex-col space-y-[16px]">
                         <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Company/Organization
                             Name </label>
-                        <input type="text" placeholder="Enter your company/organization name"
+                        <input id="company" type="text" placeholder="Enter your company/organization name"
                             class="w-[98%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] h-[58px] pl-[24px] px-[10px] py-[5px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div class="form flex flex-col space-y-[16px]">
                         <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Company Size</label>
-                        <input type="number" placeholder="Select Size"
+                        <input id="size" type="number" placeholder="Select Size"
                             class="w-[98%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] h-[58px] pl-[24px] px-[10px] py-[5px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div class="form flex flex-col space-y-[16px]">
                         <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Role / Title  </label>
-                        <input type="text" placeholder="Enter your role"
+                        <input id="role" type="text" placeholder="Enter your role"
                             class="w-[98%] placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] h-[58px] pl-[24px] px-[10px] py-[5px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     </div>
                     <div class="form flex flex-col space-y-[16px]">
                         <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Message  </label>
-                        <textarea placeholder="Tell us about your business specific needs and timelines" rows="6"
+                        <textarea id="message" placeholder="Tell us about your business specific needs and timelines" rows="6"
                             class="w-[98%] resize-none placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] pl-[24px] px-[10px] py-[5px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                     </div>
-                </form>
-                <button onclick="SucessFormtatusInfo()"
+                <button type="submit"
                     class="w-[98%] getDemoBtn rounded-[12px] px-[24px] py-[18px] bg-[#06527E] text-white text-[14px] sm:text-[16px] font-medium transition hover:opacity-85">
                     Submit <span class="ml-2">→</span>
                 </button>
+                </form>
             </div>
         </div>
     </section>
     <!-- .Form Section -->
 
     <!-- SucessForm Section -->
-    <section class="SucessForm-sec hidden bg-[#000000] fixed top-0 left-0 right-0 z-50 bg-opacity-50 w-full h-full"
+    <section id="status" class="SucessForm-sec hidden bg-[#000000] fixed top-0 left-0 right-0 z-50 bg-opacity-50 w-full h-full"
         id="">
         <div class="container mx-auto">
             <div
-                class="w-[90%] sm:w-[514px] my-6 mx-auto p-6 bg-white rounded-[30px] fixed top-[12%] left-0 right-0 space-y-[3px] text-center">
-                <img class="w-[206px] h-[206px] mx-auto" src="img/verified.webp" alt="image">
-                <h1 class="text-[#242424] text-[35px] sm:text-[50px] font-medium leading-[120%]">Let’s
+                class="w-[90%] sm:w-[420px] my-6 mx-auto p-6 bg-white rounded-[30px] fixed top-[12%] left-0 right-0 space-y-[3px] text-center">
+                <img class="w-[150px] h-[150px] mx-auto" src="img/verified.webp" alt="image">
+                <h1 class="text-[#242424] text-[35px] sm:text-[50px] font-medium leading-[120%]">
                     Successful
                 </h1>
                 <p class="text-[#71879C] mx-auto sm:w-[300px] text-[16px] font-light py-[6px] sm:py-[10px]">
@@ -522,6 +522,38 @@
         </div>
     </section>
     <!-- .SucessForm Section -->
+
+    <!-- Error Section -->
+    <section id="error-modal" class="hidden bg-[#000000] fixed top-0 left-0 right-0 z-50 bg-opacity-50 w-full h-full">
+  <div class="container mx-auto">
+    <div
+      class="w-[90%] sm:w-[420px] my-6 mx-auto p-6 bg-white rounded-[30px] fixed top-[12%] left-0 right-0 space-y-[3px] text-center">
+      <img class="w-[90px] h-[90px] mx-auto mt-8 mb-3" src="https://cdn-icons-png.flaticon.com/512/463/463612.png" alt="error icon" />
+      <h1 class="text-[#242424] text-[35px] sm:text-[50px] font-medium leading-[120%]">
+        Failed
+      </h1>
+      <p class="text-[#71879C] mx-auto sm:w-[300px] text-[16px] font-light py-[6px] sm:py-[10px]">
+        Oops! Something went wrong. Please try again later.
+      </p>
+      <button id="close-error" type="button" onclick="FormStatusInfo()"
+        class="w-[98%] rounded-[12px] px-[24px] py-[18px] bg-[#E53E3E] text-white text-[14px] sm:text-[16px] font-medium transition hover:opacity-85">
+        Close
+      </button>
+    </div>
+  </div>
+    </section>
+    <!-- Error Section -->
+     
+    <!-- Loading Section -->
+    <section id="loading" class="hidden">
+<div class="flex fixed inset-0  items-center justify-center bg-black bg-opacity-50 z-50">
+  <div class="bg-white p-6  rounded-xl shadow-lg flex flex-col items-center space-y-3">
+    <div class="loader border-4 border-t-4 border-gray-200 w-12 h-12 rounded-full animate-spin border-t-blue-500"></div>
+    <p class="text-gray-700 font-medium">Sending your message...</p>
+  </div>
+</div>
+    </section>
+    <!-- Loading Section -->
 
     <!-- Footer Section -->
     <footer>

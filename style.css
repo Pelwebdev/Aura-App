@@ -8,3 +8,6 @@
     padding: 0;
     margin: 0;
 }
+  .loader {
+    border-top-color: #06527E; /* match your brand color */
+  }
