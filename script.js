@@ -1,5 +1,4 @@
 // toggle navbar section
-
 let toggleNavStatus = true;
 let toggleNav = function () {
     let getNavBar = document.querySelector(".navbar");
@@ -15,6 +14,21 @@ let toggleNav = function () {
 
     toggleNavStatus = !toggleNavStatus;
 };
+
+
+// when click in small screen navbar the bg should disapper and scroll to the exact href
+    const navLinks = document.querySelectorAll(".navbar a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth < 1024) { 
+          const getNavBar = document.querySelector(".navbar");
+          getNavBar.classList.add("hidden");
+          getNavBar.style.background = 'transparent';
+          toggleNavStatus = true;
+        }
+      });
+    });
+
 
 // Form Section
 let FormStatus = true;
@@ -32,6 +46,7 @@ let FormStatusInfo = function () {
     FormStatus = !FormStatus;
 };
 
+
 // Sucess Form Section
 let SucessFormStatus = true;
 let SucessFormtatusInfo = function () {
@@ -48,6 +63,7 @@ let SucessFormtatusInfo = function () {
     SucessFormStatus = !SucessFormStatus;
 };
 
+
 // onscroll Section
 window.onscroll = function () {
     let getHeader = document.querySelector('.header');
@@ -60,9 +76,6 @@ window.onscroll = function () {
         getHeader.style.background = 'transparent'
     }
 }
-
-
-
 
 
 // EMailJS Section
@@ -86,7 +99,7 @@ form.addEventListener("submit", function (e) {
 
     // Basic validation
     if (!name || !email || !company || !size || !role || !message) {
-        alert("Please fill in all fields before submitting."); // Focus the first empty input
+        alert("Please fill in all fields before submitting.");
         if (!name) document.getElementById("name").focus();
         else if (!email) document.getElementById("email").focus();
         else if (!company) document.getElementById("company").focus();
