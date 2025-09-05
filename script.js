@@ -16,21 +16,26 @@ let toggleNav = function () {
 };
 
 
+
+
 // when click in small screen navbar the bg should disapper and scroll to the exact href
-    const navLinks = document.querySelectorAll(".navbar a");
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth < 1024) { 
-          const getNavBar = document.querySelector(".navbar");
-          getNavBar.classList.add("hidden");
-          getNavBar.style.background = 'transparent';
-          toggleNavStatus = true;
+const navLinks = document.querySelectorAll(".navbar a");
+navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+        if (window.innerWidth < 1024) {
+            const getNavBar = document.querySelector(".navbar");
+            getNavBar.classList.add("hidden");
+            getNavBar.style.background = 'transparent';
+            toggleNavStatus = true;
         }
-      });
     });
+});
 
 
-// Form Section
+
+
+
+// Form Section DownloadForm
 let FormStatus = true;
 let FormStatusInfo = function () {
     let getGetDemo = document.querySelector(".Get-demo");
@@ -45,6 +50,64 @@ let FormStatusInfo = function () {
 
     FormStatus = !FormStatus;
 };
+
+
+
+
+
+// DownloadForm Section
+let DownloadFormStatus = true;
+let DownloadFormStatusInfo = function () {
+    let getGetDemo = document.querySelector(".Get-demo");
+    let getDownFormSec = document.querySelector(".DownloadForm");
+    let getTimesBtn = document.querySelector(".Times-btn");
+
+    if (FormStatus) {
+        getDownFormSec.style.display = 'block';
+    } else {
+        getDownFormSec.style.display = 'none'
+    }
+
+    FormStatus = !FormStatus;
+};
+
+
+
+
+
+// Dropdown functionality
+const dropdownBtn = document.getElementById("dropdownBtn");
+const dropdownMenu = document.getElementById("dropdownMenu");
+const dropdownSelected = document.getElementById("dropdownSelected");
+const options = dropdownMenu.querySelectorAll("li");
+
+dropdownBtn.addEventListener("click", () => {
+    dropdownMenu.classList.toggle("hidden");
+});
+
+options.forEach(option => {
+    option.addEventListener("click", () => {
+        // Update button text
+        dropdownSelected.textContent = option.textContent;
+
+        // Make the placeholder change colr after selection
+        dropdownSelected.classList.remove("text-gray-500");
+        dropdownSelected.style.color = "#242424";
+
+        // Close dropdown
+        dropdownMenu.classList.add("hidden");
+    });
+});
+
+// Close dropdown if clicked outside
+document.addEventListener("click", (e) => {
+    if (!dropdownBtn.contains(e.target) && !dropdownMenu.contains(e.target)) {
+        dropdownMenu.classList.add("hidden");
+    }
+});
+// .Dropdown functionality
+
+
 
 
 // Sucess Form Section
@@ -64,6 +127,8 @@ let SucessFormtatusInfo = function () {
 };
 
 
+
+
 // onscroll Section
 window.onscroll = function () {
     let getHeader = document.querySelector('.header');
@@ -76,6 +141,8 @@ window.onscroll = function () {
         getHeader.style.background = 'transparent'
     }
 }
+
+
 
 
 // EMailJS Section
