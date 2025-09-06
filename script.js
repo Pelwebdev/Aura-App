@@ -145,71 +145,160 @@ window.onscroll = function () {
 
 
 
+// // EMailJS Section
+// const form = document.getElementById("contact-form");
+// const successModal = document.getElementById("status");
+// const errorModal = document.getElementById("error-modal");
+// const closeErrorBtn = document.getElementById("close-error");
+// const loadingModal = document.getElementById("loading");
+
+// form.addEventListener("submit", function (e) {
+//     e.preventDefault();
+
+
+//     // Get input values
+//     const name = document.getElementById("name").value.trim();
+//     const email = document.getElementById("email").value.trim();
+//     const company = document.getElementById("company").value.trim();
+//     const size = document.getElementById("size").value.trim();
+//     const role = document.getElementById("role").value.trim();
+//     const message = document.getElementById("message").value.trim();
+
+//     // Basic validation
+//     if (!name || !email || !company || !size || !role || !message) {
+//         alert("Please fill in all fields before submitting.");
+//         if (!name) document.getElementById("name").focus();
+//         else if (!email) document.getElementById("email").focus();
+//         else if (!company) document.getElementById("company").focus();
+//         else if (!size) document.getElementById("size").focus();
+//         else if (!role) document.getElementById("role").focus();
+//         else if (!message) document.getElementById("message").focus();
+
+//         return;
+//     }
+
+//     // Email validation
+//     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+//     if (!emailRegex.test(email)) {
+//         alert("Please enter a valid email address.");
+//         document.getElementById("email").focus();
+//         return;
+//     }
+//     // Show loading modal
+//     loadingModal.classList.remove("hidden");
+
+//     const templateParams = {
+//         user_name: name,
+//         user_email: email,
+//         company: company,
+//         size: size,
+//         role: role,
+//         message: message,
+//     };
+
+//     // Send Welcome email via EmailJS To User
+//     emailjs
+//         .send("service_21wq9fd", "template_gy7syif", templateParams)
+//         .then(() => {
+//             console.error("Welcome email sent to user");
+//         })
+//         .catch((error) => {
+//             console.error("FAILED...", error);
+//         });
+
+
+//     // Send email via EmailJS
+//     emailjs
+//         .send("service_21wq9fd", "template_n45n7l4", templateParams)
+//         .then(() => {
+//             loadingModal.classList.add("hidden");
+//             successModal.classList.remove("hidden");
+//             form.reset();
+//         })
+//         .catch((error) => {
+//             console.error("FAILED...", error);
+//             loadingModal.classList.add("hidden");
+//             errorModal.classList.remove("hidden");
+//         });
+// });
+
+// // Close error modal
+// closeErrorBtn.addEventListener("click", () => {
+//     errorModal.classList.add("hidden");
+// });
+
 // EMailJS Section
-const form = document.getElementById("contact-form");
 const successModal = document.getElementById("status");
 const errorModal = document.getElementById("error-modal");
 const closeErrorBtn = document.getElementById("close-error");
 const loadingModal = document.getElementById("loading");
 
-form.addEventListener("submit", function (e) {
+// Handle form submission (works for any form)
+function handleFormSubmit(e, formType) {
     e.preventDefault();
 
+    // Get form reference
+    const form = e.target;
 
-    // Get input values
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const company = document.getElementById("company").value.trim();
-    const size = document.getElementById("size").value.trim();
-    const role = document.getElementById("role").value.trim();
-    const message = document.getElementById("message").value.trim();
+    // Common fields
+    const name = form.querySelector("#name").value.trim();
+    const email = form.querySelector("#email").value.trim();
 
     // Basic validation
-    if (!name || !email || !company || !size || !role || !message) {
-        alert("Please fill in all fields before submitting.");
-        if (!name) document.getElementById("name").focus();
-        else if (!email) document.getElementById("email").focus();
-        else if (!company) document.getElementById("company").focus();
-        else if (!size) document.getElementById("size").focus();
-        else if (!role) document.getElementById("role").focus();
-        else if (!message) document.getElementById("message").focus();
-
+    if (!name || !email) {
+        alert("Please fill in all required fields before submitting.");
         return;
     }
-
-
 
     // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
         alert("Please enter a valid email address.");
-        document.getElementById("email").focus();
         return;
     }
+
     // Show loading modal
     loadingModal.classList.remove("hidden");
 
+    let formDetails = "";
+
+    if (formType === "Contact Form") {
+        const company = form.querySelector("#company")?.value.trim() || "";
+        const size = form.querySelector("#size")?.value.trim() || "";
+        const role = form.querySelector("#role")?.value.trim() || "";
+        const message = form.querySelector("#message")?.value.trim() || "";
+
+        formDetails = `
+Company: ${company}
+Size: ${size}
+Role: ${role}
+Message: ${message}
+        `;
+    }
+
+    if (formType === "Waitlist Form") {
+        const interest = form.querySelector("#dropdownSelected")?.innerText.trim() || "";
+        formDetails = `Interest: ${interest}`;
+    }
+
     const templateParams = {
+        form_type: formType,
         user_name: name,
         user_email: email,
-        company: company,
-        size: size,
-        role: role,
-        message: message,
+        form_details: formDetails
     };
 
-    // Send Welcome email via EmailJS To User
+    // Send Welcome email to user
     emailjs
         .send("service_21wq9fd", "template_gy7syif", templateParams)
         .then(() => {
-            console.error("Welcome email sent to user");
+            console.log("Welcome email sent to user");
         })
         .catch((error) => {
-            console.error("FAILED...", error);
+            console.error("Failed to send welcome email", error);
         });
 
-
-    // Send email via EmailJS
+    // Send form details to admin
     emailjs
         .send("service_21wq9fd", "template_n45n7l4", templateParams)
         .then(() => {
@@ -218,14 +307,17 @@ form.addEventListener("submit", function (e) {
             form.reset();
         })
         .catch((error) => {
-            console.error("FAILED...", error);
+            console.error("Failed to send admin email", error);
             loadingModal.classList.add("hidden");
             errorModal.classList.remove("hidden");
         });
-});
+}
+
+// Attach events
+document.getElementById("contact-form")?.addEventListener("submit", (e) => handleFormSubmit(e, "Contact Form"));
+document.getElementById("waitlist-form")?.addEventListener("submit", (e) => handleFormSubmit(e, "Waitlist Form"));
 
 // Close error modal
 closeErrorBtn.addEventListener("click", () => {
     errorModal.classList.add("hidden");
 });
-
