@@ -321,3 +321,16 @@ document.getElementById("waitlist-form")?.addEventListener("submit", (e) => hand
 closeErrorBtn.addEventListener("click", () => {
     errorModal.classList.add("hidden");
 });
+
+
+
+
+// You have a new {{form_type}} submission:
+
+// Name: {{user_name}}
+// Email: {{user_email}}
+// {{form_details}}
+
+
+// Best regards,
+// The Aura Connect Team
