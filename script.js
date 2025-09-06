@@ -145,93 +145,12 @@ window.onscroll = function () {
 
 
 
-// // EMailJS Section
-// const form = document.getElementById("contact-form");
-// const successModal = document.getElementById("status");
-// const errorModal = document.getElementById("error-modal");
-// const closeErrorBtn = document.getElementById("close-error");
-// const loadingModal = document.getElementById("loading");
-
-// form.addEventListener("submit", function (e) {
-//     e.preventDefault();
-
-
-//     // Get input values
-//     const name = document.getElementById("name").value.trim();
-//     const email = document.getElementById("email").value.trim();
-//     const company = document.getElementById("company").value.trim();
-//     const size = document.getElementById("size").value.trim();
-//     const role = document.getElementById("role").value.trim();
-//     const message = document.getElementById("message").value.trim();
-
-//     // Basic validation
-//     if (!name || !email || !company || !size || !role || !message) {
-//         alert("Please fill in all fields before submitting.");
-//         if (!name) document.getElementById("name").focus();
-//         else if (!email) document.getElementById("email").focus();
-//         else if (!company) document.getElementById("company").focus();
-//         else if (!size) document.getElementById("size").focus();
-//         else if (!role) document.getElementById("role").focus();
-//         else if (!message) document.getElementById("message").focus();
-
-//         return;
-//     }
-
-//     // Email validation
-//     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-//     if (!emailRegex.test(email)) {
-//         alert("Please enter a valid email address.");
-//         document.getElementById("email").focus();
-//         return;
-//     }
-//     // Show loading modal
-//     loadingModal.classList.remove("hidden");
-
-//     const templateParams = {
-//         user_name: name,
-//         user_email: email,
-//         company: company,
-//         size: size,
-//         role: role,
-//         message: message,
-//     };
-
-//     // Send Welcome email via EmailJS To User
-//     emailjs
-//         .send("service_21wq9fd", "template_gy7syif", templateParams)
-//         .then(() => {
-//             console.error("Welcome email sent to user");
-//         })
-//         .catch((error) => {
-//             console.error("FAILED...", error);
-//         });
-
-
-//     // Send email via EmailJS
-//     emailjs
-//         .send("service_21wq9fd", "template_n45n7l4", templateParams)
-//         .then(() => {
-//             loadingModal.classList.add("hidden");
-//             successModal.classList.remove("hidden");
-//             form.reset();
-//         })
-//         .catch((error) => {
-//             console.error("FAILED...", error);
-//             loadingModal.classList.add("hidden");
-//             errorModal.classList.remove("hidden");
-//         });
-// });
-
-// // Close error modal
-// closeErrorBtn.addEventListener("click", () => {
-//     errorModal.classList.add("hidden");
-// });
-
 // EMailJS Section
 const successModal = document.getElementById("status");
 const errorModal = document.getElementById("error-modal");
 const closeErrorBtn = document.getElementById("close-error");
 const loadingModal = document.getElementById("loading");
+const successMessage = document.getElementById("success-message");
 
 // Handle form submission (works for any form)
 function handleFormSubmit(e, formType) {
@@ -261,6 +180,7 @@ function handleFormSubmit(e, formType) {
     loadingModal.classList.remove("hidden");
 
     let formDetails = "";
+    let welcomeMessage = "";
 
     if (formType === "Contact Form") {
         const company = form.querySelector("#company")?.value.trim() || "";
@@ -274,21 +194,26 @@ Size: ${size}
 Role: ${role}
 Message: ${message}
         `;
+
+        welcomeMessage = "Thanks for contacting Aura! We’ll review your message and get back to you soon.";
     }
 
     if (formType === "Waitlist Form") {
         const interest = form.querySelector("#dropdownSelected")?.innerText.trim() || "";
+
         formDetails = `Interest: ${interest}`;
+        welcomeMessage = "Thanks for joining the Aura waitlist! You’ll be the first to know when we launch 🚀";
     }
 
     const templateParams = {
         form_type: formType,
         user_name: name,
         user_email: email,
-        form_details: formDetails
+        form_details: formDetails,
+        welcome_message: welcomeMessage // dynamic welcome message
     };
 
-    // Send Welcome email to user
+    // Send Welcome email to user (same template, dynamic message)
     emailjs
         .send("service_21wq9fd", "template_gy7syif", templateParams)
         .then(() => {
@@ -303,6 +228,14 @@ Message: ${message}
         .send("service_21wq9fd", "template_n45n7l4", templateParams)
         .then(() => {
             loadingModal.classList.add("hidden");
+            
+        // Change success message based on form type
+        if (formType === "Contact Form") {
+            successMessage.innerText = "✅ Thanks! Someone from our team will be in touch within 24 hours.";
+        } else if (formType === "Waitlist Form") {
+            successMessage.innerText = "🎉 Thank you! You’re officially on the Aura Conect waitlist. We’ll notify you as soon as the app is live.";
+        }
+
             successModal.classList.remove("hidden");
             form.reset();
         })
@@ -321,16 +254,3 @@ document.getElementById("waitlist-form")?.addEventListener("submit", (e) => hand
 closeErrorBtn.addEventListener("click", () => {
     errorModal.classList.add("hidden");
 });
-
-
-
-
-// You have a new {{form_type}} submission:
-
-// Name: {{user_name}}
-// Email: {{user_email}}
-// {{form_details}}
-
-
-// Best regards,
-// The Aura Connect Team
