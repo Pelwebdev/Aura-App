@@ -3,18 +3,22 @@ let toggleNavStatus = true;
 let toggleNav = function () {
     let getNavBar = document.querySelector(".navbar");
     let getMenuBar = document.querySelector(".menu-bar");
+    let getTimesBar = document.querySelector(".times-bar");
 
     if (toggleNavStatus) {
+        getTimesBar.classList.remove("hidden");
+        getMenuBar.classList.add("hidden");
         getNavBar.classList.remove("hidden");
         getNavBar.style.background = '#67A9D0';
     } else {
+        getTimesBar.classList.add("hidden");
+        getMenuBar.classList.remove("hidden");
         getNavBar.classList.add("hidden");
         getNavBar.style.background = 'transparent'
     }
 
     toggleNavStatus = !toggleNavStatus;
 };
-
 
 
 
@@ -141,8 +145,6 @@ window.onscroll = function () {
         getHeader.style.background = 'transparent'
     }
 }
-
-
 
 
 // EMailJS Section
