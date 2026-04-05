@@ -57,6 +57,24 @@ let FormStatusInfo = function () {
 
 
 
+// Sure Delete Section
+let SureDelete = true;
+let SureDeleteInfo = function () {
+    let getSureDeleteSec = document.querySelector("#sureDelete-modal");
+    let getCloseDelete = document.querySelector("#close-sureDelete");
+    let getYesDelete = document.querySelector("#yesDelete-sureDelete");
+
+    if (SureDelete) {
+        getSureDeleteSec.style.display = 'block';
+    } else {
+        getSureDeleteSec.style.display = 'none';
+    }
+
+    SureDelete = !SureDelete;
+};
+
+
+
 
 
 // DownloadForm Section

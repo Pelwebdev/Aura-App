@@ -213,7 +213,7 @@
                             Deletion Request
                         </h1>
                         <div class=" bg-white border border-[#C6C6C6] rounded-[20px] px-8">
-                            <form id="contact-form" class="space-y-[39px] py-[35px]">
+                            <form id="deletion-form" class="space-y-[39px] py-[35px]">
                                 <div class="form flex flex-col space-y-[16px]">
                                     <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Full
                                         Name</label>
@@ -233,7 +233,7 @@
                                         placeholder="Please tell us why you want to delete your account" rows="6"
                                         class="w-[98%] resize-none placeholder:text-[#B9B9B9] placeholder:text-[12px] placeholder:sm:text-[14px] placeholder:font-light border rounded-[12px] pl-[24px] px-[10px] py-[5px] border-[#C6C6C6] focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
                                 </div>
-                                <button type="submit"
+                                <button onclick="SureDeleteInfo()" type="button"
                                     class="w-[98%] getDemoBtn rounded-[12px] px-[24px] py-[18px] bg-[#06527E] text-white text-[14px] sm:text-[16px] font-medium transition hover:opacity-85">
                                     Request Account Deletion  <span class="ml-2">→</span>
                                 </button>
@@ -422,7 +422,7 @@
                                 Sleep Stories</li>
                         </ul>
                     </div>
-                    <button type="submit"
+                    <button type="button"
                         class="w-[98%] getDemoBtn rounded-[12px] px-[24px] py-[18px] bg-[#06527E] text-white text-[14px] sm:text-[16px] font-medium transition hover:opacity-85">
                         Join the Waitlist<span class="ml-2">→</span>
                     </button>
@@ -454,7 +454,7 @@
         </div>
     </section>
     <!-- .SucessForm Section -->
-
+     
     <!-- Error Section -->
     <section id="error-modal" class="hidden bg-[#000000] fixed top-0 left-0 right-0 z-50 bg-opacity-50 w-full h-full">
         <div class="container mx-auto">
@@ -476,6 +476,33 @@
         </div>
     </section>
     <!-- Error Section -->
+
+
+    <!-- Sure Delete Section -->
+    <section id="sureDelete-modal" class=" hidden bg-[#000000] fixed top-0 left-0 right-0 z-50 bg-opacity-50 w-full h-full">
+        <div class="container mx-auto">
+            <div
+                class="w-[90%] sm:w-[500px] my-6 mx-auto p-6 bg-white rounded-[30px] fixed top-[12%] left-0 right-0 space-y-[3px] text-center">
+                <img class="w-[150px] h-[150px] mx-auto" src="img/Group.webp" alt="image">
+                <h1 class="text-[#242424] text-[35px] sm:text-[40px] font-medium leading-[120%]">
+                    Are you sure you want to delete your account?
+                </h1>
+                <p class="text-[#71879C] mx-auto sm:w-[300px] text-[16px] font-light py-[6px] sm:py-[10px]">
+                    This action is permanent and cannot be undone</p>
+                    <div class="space-y-5">
+                <button id="close-sureDelete" type="button" onclick="SureDeleteInfo()"
+                    class="w-[98%] rounded-[12px] px-[24px] py-[18px] text-[#E53E3E] bg-white text-[14px] sm:text-[16px] font-medium transition hover:opacity-85 border border-[#E53E3E] hover:bg-[#fcd7d7]">
+                    Cancel
+                </button>
+                <button id="yesDelete-sureDelete" type="button" onclick="SureDeleteInfo()"
+                    class="w-[98%] rounded-[12px] px-[24px] py-[18px] bg-[#E53E3E] text-white text-[14px] sm:text-[16px] font-medium transition hover:opacity-85">
+                    Yes, Delete my Account
+                </button>
+            </div>
+            </div>
+        </div>
+    </section>
+    <!-- Sure Delete Section -->
 
     <!-- Loading Section -->
     <section id="loading" class="hidden">
