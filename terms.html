@@ -524,7 +524,7 @@
                         we launch and <span class="font-medium">enjoy 25%</span> off your first subscription as a thank
                         you.</p>
                 </div>
-                <form id="contact-form" class="space-y-[39px] pt-[46px] pb-[16px]">
+                <form  id="waitlist-form" class="space-y-[39px] pt-[46px] pb-[16px]">
                     <div class="form flex flex-col space-y-[14px]">
                         <label class="text-[#242424] text-[14px] sm:text-[16px] font-medium">Full Name</label>
                         <input id="name" type="text" placeholder="Enter your full name"
@@ -811,8 +811,16 @@
     </footer>
     <!-- .Footer Section -->
 
+
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        (function () {
+            emailjs.init("3fXb389uFG4etZ4-v");
+        })();
+    </script>
     <script src="tailwind.config.js"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>

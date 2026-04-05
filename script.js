@@ -84,13 +84,13 @@ let DownloadFormStatusInfo = function () {
     let getDownFormSec = document.querySelector(".DownloadForm");
     let getTimesBtn = document.querySelector(".Times-btn");
 
-    if (FormStatus) {
+    if (DownloadFormStatus) {
         getDownFormSec.style.display = 'block';
     } else {
         getDownFormSec.style.display = 'none'
     }
 
-    FormStatus = !FormStatus;
+    DownloadFormStatus = !DownloadFormStatus;
 };
 
 
