@@ -57,26 +57,6 @@ let FormStatusInfo = function () {
 
 
 
-// Sure Delete Section
-let SureDelete = true;
-let SureDeleteInfo = function () {
-    let getSureDeleteSec = document.querySelector("#sureDelete-modal");
-    let getCloseDelete = document.querySelector("#close-sureDelete");
-    let getYesDelete = document.querySelector("#yesDelete-sureDelete");
-
-    if (SureDelete) {
-        getSureDeleteSec.style.display = 'block';
-    } else {
-        getSureDeleteSec.style.display = 'none';
-    }
-
-    SureDelete = !SureDelete;
-};
-
-
-
-
-
 // DownloadForm Section
 let DownloadFormStatus = true;
 let DownloadFormStatusInfo = function () {
@@ -92,8 +72,6 @@ let DownloadFormStatusInfo = function () {
 
     DownloadFormStatus = !DownloadFormStatus;
 };
-
-
 
 
 
@@ -165,64 +143,101 @@ window.onscroll = function () {
 }
 
 
-// EMailJS Section
+// MODALS
+// ==========================
 const successModal = document.getElementById("status");
 const errorModal = document.getElementById("error-modal");
 const closeErrorBtn = document.getElementById("close-error");
 const loadingModal = document.getElementById("loading");
 const successMessage = document.getElementById("success-message");
 
-// Handle form submission (works for any form)
+const sureDeleteModal = document.getElementById("sureDelete-modal");
+const closeSureDelete = document.getElementById("close-sureDelete");
+const yesDeleteBtn = document.getElementById("yesDelete-sureDelete");
+
+// ==========================
+// HELPER FUNCTION: SEND EMAIL
+// ==========================
+function sendEmail(templateParams, form) {
+    if (typeof emailjs === "undefined") {
+        console.error("EmailJS is not loaded!");
+        loadingModal.classList.add("hidden");
+        errorModal.classList.remove("hidden");
+        return;
+    }
+
+    loadingModal.classList.remove("hidden");
+    emailjs.init("3fXb389uFG4etZ4-v"); // public key
+
+    Promise.all([
+        emailjs.send("service_21wq9fd", "template_gy7syif", templateParams),
+        emailjs.send("service_21wq9fd", "template_n45n7l4", templateParams)
+    ])
+    .then(() => {
+        loadingModal.classList.add("hidden");
+
+        // --------------------------
+        // CUSTOM SUCCESS MESSAGES
+        // --------------------------
+        if (templateParams.form_type === "Waitlist Form") {
+            successMessage.innerText = "🎉 Thank you! You’re officially on the Aura Connect waitlist. We’ll notify you as soon as the app is live.";
+        } else if (templateParams.form_type === "Contact Form") {
+            successMessage.innerText = "✅ Thanks! Someone from our team will be in touch within 24 hours.";
+        } else if (templateParams.form_type === "Deleted Form") {
+            successMessage.innerText = "🗑️ Your deletion request has been submitted. We’ll process it within 30 days.";
+        } else {
+            successMessage.innerText = `✅ ${templateParams.form_type} submitted successfully!`;
+        }
+
+        successModal.classList.remove("hidden");
+        form.reset();
+    })
+    .catch((err) => {
+        console.error("EmailJS Error:", err);
+        loadingModal.classList.add("hidden");
+        errorModal.classList.remove("hidden");
+    });
+}
+
+// ==========================
+// HANDLE FORM SUBMIT
+// ==========================
 function handleFormSubmit(e, formType) {
     e.preventDefault();
 
-    // Get form reference
     const form = e.target;
-
-    // Common fields
-    const name = form.querySelector("#name").value.trim();
-    const email = form.querySelector("#email").value.trim();
+    const name = form.querySelector("#name")?.value.trim() || "";
+    const email = form.querySelector("#email")?.value.trim() || "";
+    let reason = form.querySelector("#reason")?.value.trim() || "";
 
     // Basic validation
     if (!name || !email) {
-        alert("Please fill in all required fields before submitting.");
+        alert("Please fill in all required fields");
         return;
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-        alert("Please enter a valid email address.");
+        alert("Please enter a valid email address");
         return;
     }
-
-    // Show loading modal
-    loadingModal.classList.remove("hidden");
 
     let formDetails = "";
     let welcomeMessage = "";
 
     if (formType === "Contact Form") {
         const company = form.querySelector("#company")?.value.trim() || "";
-        const size = form.querySelector("#size")?.value.trim() || "";
         const role = form.querySelector("#role")?.value.trim() || "";
         const message = form.querySelector("#message")?.value.trim() || "";
-
-        formDetails = `
-Company: ${company}
-Size: ${size}
-Role: ${role}
-Message: ${message}
-        `;
-
-        welcomeMessage = "Thanks for contacting Aura! We’ll review your message and get back to you soon.";
-    }
-
-    if (formType === "Waitlist Form") {
+        formDetails = `Company: ${company}\nRole: ${role}\nMessage: ${message}`;
+        welcomeMessage = "Thanks for contacting us! We’ll get back to you soon.";
+    } else if (formType === "Waitlist Form") {
         const interest = form.querySelector("#dropdownSelected")?.innerText.trim() || "";
-
         formDetails = `Interest: ${interest}`;
-        welcomeMessage = "Thanks for joining the Aura waitlist! You’ll be the first to know when we launch 🚀";
+        welcomeMessage = "Thanks for joining our waitlist! You’ll be the first to know when we launch.";
+    } else if (formType === "Deleted Form") {
+        formDetails = `Reason: ${reason}`;
+        welcomeMessage = "Your deletion request has been received. We’ll process it within 30 days.";
     }
 
     const templateParams = {
@@ -230,47 +245,40 @@ Message: ${message}
         user_name: name,
         user_email: email,
         form_details: formDetails,
-        welcome_message: welcomeMessage // dynamic welcome message
+        welcome_message: welcomeMessage,
+        deletion_reason: reason
     };
 
-    // Send Welcome email to user (same template, dynamic message)
-    emailjs
-        .send("service_21wq9fd", "template_gy7syif", templateParams)
-        .then(() => {
-            console.log("Welcome email sent to user");
-        })
-        .catch((error) => {
-            console.error("Failed to send welcome email", error);
-        });
+    // If Deleted Form, show confirmation first
+    if (formType === "Deleted Form") {
+        sureDeleteModal.classList.remove("hidden");
 
-    // Send form details to admin
-    emailjs
-        .send("service_21wq9fd", "template_n45n7l4", templateParams)
-        .then(() => {
-            loadingModal.classList.add("hidden");
-            
-        // Change success message based on form type
-        if (formType === "Contact Form") {
-            successMessage.innerText = "✅ Thanks! Someone from our team will be in touch within 24 hours.";
-        } else if (formType === "Waitlist Form") {
-            successMessage.innerText = "🎉 Thank you! You’re officially on the Aura Conect waitlist. We’ll notify you as soon as the app is live.";
-        }
-
-            successModal.classList.remove("hidden");
-            form.reset();
-        })
-        .catch((error) => {
-            console.error("Failed to send admin email", error);
-            loadingModal.classList.add("hidden");
-            errorModal.classList.remove("hidden");
-        });
+        yesDeleteBtn.onclick = () => {
+            sureDeleteModal.classList.add("hidden");
+            sendEmail(templateParams, form);
+        };
+    } else {
+        sendEmail(templateParams, form);
+    }
 }
 
-// Attach events
+// ==========================
+// ATTACH EVENT LISTENERS
+// ==========================
 document.getElementById("contact-form")?.addEventListener("submit", (e) => handleFormSubmit(e, "Contact Form"));
 document.getElementById("waitlist-form")?.addEventListener("submit", (e) => handleFormSubmit(e, "Waitlist Form"));
+document.getElementById("deleted-form")?.addEventListener("submit", (e) => handleFormSubmit(e, "Deleted Form"));
 
-// Close error modal
+// ==========================
+// CLOSE ERROR MODAL
+// ==========================
 closeErrorBtn.addEventListener("click", () => {
     errorModal.classList.add("hidden");
+});
+
+// ==========================
+// CLOSE DELETE CONFIRMATION MODAL (Cancel Button)
+// ==========================
+closeSureDelete.addEventListener("click", () => {
+    sureDeleteModal.classList.add("hidden");
 });

@@ -10,3 +10,31 @@
   .loader {
     border-top-color: #06527E;
   }
+
+  /* <div style="font-family: system-ui, sans-serif, Arial; font-size: 16px; background-color: #fff8f1;">
+<div style="max-width: 600px; margin: auto; padding: 16px;"><a style="text-decoration: none; outline: none;" href="https://pelwebdev.github.io/Aura-App/" target="_blank" rel="noopener"> <img style="height: 32px; vertical-align: middle;" src="https://pelwebdev.github.io/Aura-App/img/footer-icon__1_-removebg-preview.png" alt="logo" height="32px"></a>
+<div>
+<p>Hi {{user_name}}, Welcome to the Genie family! We're excited to have you on board.</p>
+{{welcome_message}}<br>
+<p>If you have any questions or need help getting started, our support team is just an email away at <a style="text-decoration: none; outline: none; color: #fc0038;" href="mailto:Info@adinkra.global">Info@adinkra.global</a>. We're here to assist you every step of the way!</p>
+<p>Best regards,<br>The Company Genie Team</p>
+</div>
+</div>s
+</div> */
+
+/* <div style="font-family: system-ui, sans-serif, Arial; font-size: 16px; background-color: #fff8f1;">
+<div style="max-width: 600px; margin: auto; padding: 16px;"><a style="text-decoration: none; outline: none;" href="https://pelwebdev.github.io/Aura-App/" target="_blank" rel="noopener"> <img style="height: 32px; vertical-align: middle;" src="https://pelwebdev.github.io/Aura-App/img/footer-icon__1_-removebg-preview.png" alt="logo" height="32px"></a>
+<div>
+<div>
+<div>You have a new {{form_type}} submission:</div>
+<br>
+<div>Name: {{user_name}}</div>
+<div>Email: {{user_email}}</div>
+<div>{{form_details}}</div>
+<br><br>
+<div>Best regards,</div>
+<div>The Genie Team</div>
+</div>
+</div>
+</div>
+</div> */
