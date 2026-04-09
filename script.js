@@ -173,30 +173,30 @@ function sendEmail(templateParams, form) {
         emailjs.send("service_21wq9fd", "template_gy7syif", templateParams),
         emailjs.send("service_21wq9fd", "template_n45n7l4", templateParams)
     ])
-    .then(() => {
-        loadingModal.classList.add("hidden");
+        .then(() => {
+            loadingModal.classList.add("hidden");
 
-        // --------------------------
-        // CUSTOM SUCCESS MESSAGES
-        // --------------------------
-        if (templateParams.form_type === "Waitlist Form") {
-            successMessage.innerText = "🎉 Thank you! You’re officially on the Aura Connect waitlist. We’ll notify you as soon as the app is live.";
-        } else if (templateParams.form_type === "Contact Form") {
-            successMessage.innerText = "✅ Thanks! Someone from our team will be in touch within 24 hours.";
-        } else if (templateParams.form_type === "Deleted Form") {
-            successMessage.innerText = "🗑️ Your deletion request has been submitted. We’ll process it within 30 days.";
-        } else {
-            successMessage.innerText = `✅ ${templateParams.form_type} submitted successfully!`;
-        }
+            // --------------------------
+            // CUSTOM SUCCESS MESSAGES
+            // --------------------------
+            if (templateParams.form_type === "Waitlist Form") {
+                successMessage.innerText = "🎉 Thank you! You’re officially on the Aura Connect waitlist. We’ll notify you as soon as the app is live.";
+            } else if (templateParams.form_type === "Contact Form") {
+                successMessage.innerText = "✅ Thanks! Someone from our team will be in touch within 24 hours.";
+            } else if (templateParams.form_type === "Deleted Form") {
+                successMessage.innerText = "🗑️ Your deletion request has been submitted. We’ll process it within 30 days.";
+            } else {
+                successMessage.innerText = `✅ ${templateParams.form_type} submitted successfully!`;
+            }
 
-        successModal.classList.remove("hidden");
-        form.reset();
-    })
-    .catch((err) => {
-        console.error("EmailJS Error:", err);
-        loadingModal.classList.add("hidden");
-        errorModal.classList.remove("hidden");
-    });
+            successModal.classList.remove("hidden");
+            form.reset();
+        })
+        .catch((err) => {
+            console.error("EmailJS Error:", err);
+            loadingModal.classList.add("hidden");
+            errorModal.classList.remove("hidden");
+        });
 }
 
 // ==========================
@@ -208,7 +208,6 @@ function handleFormSubmit(e, formType) {
     const form = e.target;
     const name = form.querySelector("#name")?.value.trim() || "";
     const email = form.querySelector("#email")?.value.trim() || "";
-    let reason = form.querySelector("#reason")?.value.trim() || "";
 
     // Basic validation
     if (!name || !email) {
@@ -236,7 +235,7 @@ function handleFormSubmit(e, formType) {
         formDetails = `Interest: ${interest}`;
         welcomeMessage = "Thanks for joining our waitlist! You’ll be the first to know when we launch.";
     } else if (formType === "Deleted Form") {
-        formDetails = `Reason: ${reason}`;
+        formDetails = `Reason: ${message}`;
         welcomeMessage = "Your deletion request has been received. We’ll process it within 30 days.";
     }
 
@@ -246,8 +245,39 @@ function handleFormSubmit(e, formType) {
         user_email: email,
         form_details: formDetails,
         welcome_message: welcomeMessage,
-        deletion_reason: reason
+        deletion_reason: message
     };
+
+    // Customize for Deleted Form
+    if (formType === "Deleted Form") {
+        templateParams.welcome_message = `
+        Hi ${name},<br><br>
+        We have received your account deletion request. Your data will be removed within 30 days.<br>
+        If you have any questions or need help, contact us at 
+        <a href="mailto:Info@adinkra.global" style="color: #fc0038;">Info@adinkra.global</a>. We're here to assist you!<br><br>
+        If you did not request this deletion, you can safely ignore this email.<br><br>
+        Best regards,<br>
+        The Genie Team
+    `;
+    }
+    if (formType === "Contact Form") {
+        templateParams.welcome_message = `
+    Hi ${name},Welcome to the Genie family! We're excited to have you on board.<br><br>
+    Thanks for contacting us! We’ll get back to you soon.<br><br>
+    If you have any questions or need help getting started, our support team is just an email away at <a href="mailto:Info@adinkra.global" style="color: #fc0038;">Info@adinkra.global</a>. We're here to assist you every step of the way.<br><br>
+    Best regards,<br>
+    The Company Genie Team
+    `;
+    }
+    if (formType === "Waitlist Form") {
+        templateParams.welcome_message = `
+    Hi ${name},Welcome to the Genie family! We're excited to have you on board.<br><br>
+    Thanks for joining our waitlist! You’ll be the first to know when we launch.<br>
+    If you have any questions or need help getting started, our support team is just an email away at <a href="mailto:Info@adinkra.global" style="color: #fc0038;">Info@adinkra.global</a>. We're here to assist you every step of the way.<br><br>
+    Best regards,<br>
+    The Company Genie Team
+    `;
+    }
 
     // If Deleted Form, show confirmation first
     if (formType === "Deleted Form") {
