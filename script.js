@@ -235,6 +235,7 @@ function handleFormSubmit(e, formType) {
         formDetails = `Interest: ${interest}`;
         welcomeMessage = "Thanks for joining our waitlist! You’ll be the first to know when we launch.";
     } else if (formType === "Deleted Form") {
+        const message = form.querySelector("#reason")?.value.trim() || "";
         formDetails = `Reason: ${message}`;
         welcomeMessage = "Your deletion request has been received. We’ll process it within 30 days.";
     }
@@ -245,11 +246,12 @@ function handleFormSubmit(e, formType) {
         user_email: email,
         form_details: formDetails,
         welcome_message: welcomeMessage,
-        deletion_reason: message
+        deletion_reason: `Reason: ${message}`
     };
 
     // Customize for Deleted Form
     if (formType === "Deleted Form") {
+        templateParams.subject = "Account Deletion Request";
         templateParams.welcome_message = `
         Hi ${name},<br><br>
         We have received your account deletion request. Your data will be removed within 30 days.<br>
@@ -261,6 +263,7 @@ function handleFormSubmit(e, formType) {
     `;
     }
     if (formType === "Contact Form") {
+        templateParams.subject = "Account Deletion Request";
         templateParams.welcome_message = `
     Hi ${name},Welcome to the Genie family! We're excited to have you on board.<br><br>
     Thanks for contacting us! We’ll get back to you soon.<br><br>
@@ -270,6 +273,7 @@ function handleFormSubmit(e, formType) {
     `;
     }
     if (formType === "Waitlist Form") {
+        templateParams.subject = `Welcome to Genie, ${name}!`;
         templateParams.welcome_message = `
     Hi ${name},Welcome to the Genie family! We're excited to have you on board.<br><br>
     Thanks for joining our waitlist! You’ll be the first to know when we launch.<br>
