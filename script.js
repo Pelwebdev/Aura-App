@@ -21,7 +21,21 @@ let toggleNav = function () {
 };
 
 
+// download button section
+const buttons = document.querySelectorAll(".downloadBtn");
+buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const userAgent = navigator.userAgent || navigator.vendor;
 
+        if (/android/i.test(userAgent)) {
+            window.location.href = "https://play.google.com/store/apps/details?id=com.genie.adinkra";
+        } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+            window.location.href = "https://apps.apple.com/app/id1234567890";
+        } else {
+            window.location.href = "https://play.google.com/store/apps/details?id=com.genie.adinkra";
+        }
+    });
+});
 // when click in small screen navbar the bg should disapper and scroll to the exact href
 const navLinks = document.querySelectorAll(".navbar a");
 navLinks.forEach((link) => {
